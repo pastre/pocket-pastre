@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,102 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NC1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RvH-EM-yd6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debugButton" translatesAutoresizingMaskIntoConstraints="NO" id="fFM-y6-rqq">
+                                <rect key="frame" x="149.5" y="64" width="115" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fFM-y6-rqq" secondAttribute="height" multiplier="115:113" id="b5E-JS-Ghf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debugButton" translatesAutoresizingMaskIntoConstraints="NO" id="kap-dB-7OJ">
+                                <rect key="frame" x="20" y="120.5" width="115" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kap-dB-7OJ" secondAttribute="height" multiplier="115:113" id="uKp-7n-vlg"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debugButton" translatesAutoresizingMaskIntoConstraints="NO" id="q4d-0m-rri">
+                                <rect key="frame" x="270" y="120.5" width="115" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="q4d-0m-rri" secondAttribute="height" multiplier="115:113" id="C5z-Fz-yTp"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debugButton" translatesAutoresizingMaskIntoConstraints="NO" id="jhn-Yv-8zM">
+                                <rect key="frame" x="149.5" y="749" width="115" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jhn-Yv-8zM" secondAttribute="height" multiplier="115:113" id="EtB-lm-mHh"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winky" translatesAutoresizingMaskIntoConstraints="NO" id="jdi-u5-kp3">
+                                <rect key="frame" x="51" y="253.5" width="312.00000000000006" height="419"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jdi-u5-kp3" secondAttribute="height" multiplier="374:502" id="PbE-Zt-niO"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debugButton" translatesAutoresizingMaskIntoConstraints="NO" id="pTg-xu-r31">
+                                <rect key="frame" x="20" y="692.5" width="115" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pTg-xu-r31" secondAttribute="height" multiplier="115:113" id="jvm-fY-z50"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debugButton" translatesAutoresizingMaskIntoConstraints="NO" id="NBx-Hb-IPZ">
+                                <rect key="frame" x="278" y="692.5" width="115" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NBx-Hb-IPZ" secondAttribute="height" multiplier="115:113" id="06m-yI-Y7T"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fFM-y6-rqq" firstAttribute="height" secondItem="q4d-0m-rri" secondAttribute="height" id="0sH-g7-76A"/>
+                            <constraint firstItem="fFM-y6-rqq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="3oR-QU-4Bm"/>
+                            <constraint firstItem="fFM-y6-rqq" firstAttribute="height" secondItem="kap-dB-7OJ" secondAttribute="height" id="56j-GQ-F6O"/>
+                            <constraint firstItem="fFM-y6-rqq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7KH-Fm-zhw"/>
+                            <constraint firstItem="NBx-Hb-IPZ" firstAttribute="bottom" secondItem="jhn-Yv-8zM" secondAttribute="centerY" id="7nD-FZ-78k"/>
+                            <constraint firstItem="kap-dB-7OJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8fd-ub-5k2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jhn-Yv-8zM" secondAttribute="bottom" id="Ay8-6c-UDy"/>
+                            <constraint firstItem="pTg-xu-r31" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="HEe-0R-4Zv"/>
+                            <constraint firstItem="jhn-Yv-8zM" firstAttribute="height" secondItem="NBx-Hb-IPZ" secondAttribute="height" id="OCt-4d-VVu"/>
+                            <constraint firstItem="pTg-xu-r31" firstAttribute="width" secondItem="pTg-xu-r31" secondAttribute="height" multiplier="115:113" id="POv-k5-LJL"/>
+                            <constraint firstItem="jhn-Yv-8zM" firstAttribute="width" secondItem="NBx-Hb-IPZ" secondAttribute="width" id="PmV-QA-ALO"/>
+                            <constraint firstItem="NBx-Hb-IPZ" firstAttribute="width" secondItem="NBx-Hb-IPZ" secondAttribute="height" multiplier="115:113" id="VCy-K9-Ltb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q4d-0m-rri" secondAttribute="trailing" constant="29" id="Vvy-JL-lbx"/>
+                            <constraint firstItem="q4d-0m-rri" firstAttribute="centerY" secondItem="kap-dB-7OJ" secondAttribute="centerY" id="WhI-4S-67g"/>
+                            <constraint firstItem="jhn-Yv-8zM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WtF-a7-j9I"/>
+                            <constraint firstItem="jhn-Yv-8zM" firstAttribute="width" secondItem="pTg-xu-r31" secondAttribute="width" id="aHL-Ez-hss"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NBx-Hb-IPZ" secondAttribute="trailing" constant="21" id="aLx-V8-RR9"/>
+                            <constraint firstItem="jdi-u5-kp3" firstAttribute="top" secondItem="kap-dB-7OJ" secondAttribute="bottom" constant="20" id="amC-jL-MOL"/>
+                            <constraint firstItem="pTg-xu-r31" firstAttribute="top" secondItem="jdi-u5-kp3" secondAttribute="bottom" constant="20" id="bI5-Rd-Lay"/>
+                            <constraint firstItem="q4d-0m-rri" firstAttribute="leading" secondItem="fFM-y6-rqq" secondAttribute="trailing" constant="5.5" id="cui-70-3IP"/>
+                            <constraint firstItem="jhn-Yv-8zM" firstAttribute="height" secondItem="pTg-xu-r31" secondAttribute="height" id="gIz-Kp-TIW"/>
+                            <constraint firstItem="fFM-y6-rqq" firstAttribute="leading" secondItem="kap-dB-7OJ" secondAttribute="trailing" constant="14.5" id="mAO-Ys-YzA"/>
+                            <constraint firstItem="pTg-xu-r31" firstAttribute="bottom" secondItem="jhn-Yv-8zM" secondAttribute="centerY" id="oxw-YD-WBU"/>
+                            <constraint firstItem="jdi-u5-kp3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pjo-Cj-ouf"/>
+                            <constraint firstItem="kap-dB-7OJ" firstAttribute="top" secondItem="fFM-y6-rqq" secondAttribute="centerY" id="wSK-rW-oZ1"/>
+                            <constraint firstItem="fFM-y6-rqq" firstAttribute="width" secondItem="kap-dB-7OJ" secondAttribute="width" id="x2O-kW-Hfk"/>
+                            <constraint firstItem="fFM-y6-rqq" firstAttribute="width" secondItem="q4d-0m-rri" secondAttribute="width" id="z0X-l4-Bpl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bgview" destination="RvH-EM-yd6" id="lrc-hb-R4e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="debugButton" width="115" height="113"/>
+        <image name="winky" width="374" height="502"/>
+    </resources>
 </document>
