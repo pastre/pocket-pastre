@@ -23,35 +23,6 @@ class ViewController: UIViewController {
         self.setupCABackground()
     }
     
-    func setupSKBackground() {
-        let backgroundView: SKView = {
-           let view = SKView()
-            
-            view.translatesAutoresizingMaskIntoConstraints = false
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-            
-            return view
-        }()
-        
-        self.view.addSubview(backgroundView)
-        
-        backgroundView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        backgroundView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        backgroundView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        backgroundView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        
-        
-        let scene = GameScene()
-        
-        backgroundView.presentScene(scene)
-        
-        print("Configured BG")
-    }
-    
     func setupCABackground() {
 //        let backgroundView: SKView = {
 //            let view = SKView()
