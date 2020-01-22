@@ -13,31 +13,31 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var bgview: UIView!
     
+    @IBOutlet weak var story1View: UIImageView!
+    @IBOutlet weak var story2View: UIImageView!
+    @IBOutlet weak var story3View: UIImageView!
+    @IBOutlet weak var story4View: UIImageView!
+    @IBOutlet weak var story5View: UIImageView!
+    @IBOutlet weak var story6View: UIImageView!
+    
+    @IBOutlet weak var winkyImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         self.setupCABackground()
+        
+        self.setupViewPan()
     }
     
+    // MARK: - Setup functions
+    
     func setupCABackground() {
-//        let backgroundView: SKView = {
-//            let view = SKView()
-//            view.translatesAutoresizingMaskIntoConstraints = false
-//
-//            view.ignoresSiblingOrder = true
-//
-//            view.showsFPS = true
-//            view.showsNodeCount = true
-//
-//            return view
-//        }()
-//
-//        let scene = BackgroundScene()
-//
+        
         let backgroundView: UIView = {
             let view = UIView()
             
@@ -59,7 +59,6 @@ class ViewController: UIViewController {
         starsLayer.emitterPosition = self.view.center
         starsLayer.emitterSize = self.view.frame.size
         starsLayer.emitterShape = .cuboid
-//        starsLayer.emitterMode = .points
         
         
         let cell = CAEmitterCell()
@@ -68,10 +67,9 @@ class ViewController: UIViewController {
         cell.lifetime = 5
         cell.alphaSpeed = -1.5
         cell.scale = 0.5
-//        cell.velocity = 30
+        
         
         cell.color = UIColor.white.cgColor
-//        cell.emissionRange = 10
         cell.contents = UIImage.circle(diameter: 5, color: UIColor.white.withAlphaComponent(0.7)).cgImage
         
         starsLayer.emitterCells = [cell]
@@ -79,6 +77,132 @@ class ViewController: UIViewController {
         backgroundView.layer.addSublayer(starsLayer)
         
         print("Configured CA BG")
+    }
+    
+    func setupViewPan() {
+        
+        for button in self.getButtons() {
+            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.onPan))
+            
+            button.isUserInteractionEnabled = true
+            button.addGestureRecognizer(panGesture)
+        }
+    }
+    
+    // MARK: - Pan gesture methods
+    
+    var isBig: Bool?
+    var prevLocation: CGPoint?
+    
+    func onStart(_ view: UIView){
+        self.view.bringSubviewToFront(view)
+        
+        self.isBig = false
+    }
+    
+    func onChanged(_ view: UIView, location: CGPoint) {
+//        print("location", location, view.center)
+        defer { self.testIntersect(view) }
+        if let prev = self.prevLocation {
+            UIView.animate(withDuration: 0.1) {
+                
+                view.transform = view.transform.translatedBy(x: location.x - prev.x, y: location.y - prev.y)
+            }
+        }
+        
+        self.prevLocation = location
+//        view.transform.tx = location.x
+//        view.transform.ty = location.y
+    }
+    
+    func onFinished(_ view: UIView) {
+    
+        UIView.animate(withDuration: 0.1) {
+            view.transform = .identity
+        }
+    
+        if isBig ?? false {
+            self.performSegue(withIdentifier: "story", sender: nil)
+        }
+        
+        self.prevLocation = nil
+        self.isBig = nil
+    }
+    
+    func testIntersect(_ view: UIView) {
+        guard let isBig = self.isBig else { return }
+        let scale: CGFloat = 2
+        
+        if self.getStoryHighlightArea().contains(CGPoint(x: view.frame.midX, y: view.frame.midY)){
+            
+            if isBig { return }
+            
+            self.isBig = true
+            UIView.animate(withDuration: 0.1) {
+                view.transform = view.transform.scaledBy(x: scale, y: scale)
+            }
+        } else if isBig {
+            UIView.animate(withDuration: 0.1) {
+                view.transform = view.transform.scaledBy(x: 1/scale, y: 1/scale)
+            }
+            
+            self.isBig = false
+        }
+    }
+ 
+    // MARK: - Callbacks
+    
+    @objc func onPan(_ sender: Any?) {
+        
+        guard let gesture = sender as? UIPanGestureRecognizer else { return }
+        guard let view = gesture.view else { return }
+//        guard let view = sender as? UIView else  { return }
+//        guard let gesture = view.gestureRecognizers?.first as? UIPanGestureRecognizer else { return }
+        
+        let location = gesture.translation(in: self.view)
+        
+        switch gesture.state {
+        case .began:
+            self.onStart(view)
+        case .changed:
+            self.onChanged(view, location: location)
+        case .ended:
+            self.onFinished(view)
+        default:
+            break
+        }
+        
+        
+    }
+    
+    
+    // MARK: - Helpers
+    
+    func getButtons() -> [UIView] {
+        return [
+            self.story1View,
+            self.story2View,
+            self.story3View,
+            self.story4View,
+            self.story5View,
+            self.story6View,
+        ]
+    }
+    
+    func getStoryHighlightArea() -> CGRect {
+        let screen = self.view.frame.size
+        
+        let middleX = screen.width / 2
+        let middleY = screen.height / 2
+        let areaSize: CGFloat = 200
+        
+        return CGRect(x: middleX - (areaSize / 2), y: middleY - (areaSize / 2), width: areaSize, height: areaSize)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dest = segue.destination as? StoryViewController else { return }
+        
+        // TODO: - Add story to view controller
     }
 
 }

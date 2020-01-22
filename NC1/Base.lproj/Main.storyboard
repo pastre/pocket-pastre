@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1SW-6P-G64">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,6 +7,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="6hU-sE-zL4">
+            <objects>
+                <navigationController id="1SW-6P-G64" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="naG-CD-Hne">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="K9d-wY-fYI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y3f-Nx-hho" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-281" y="-232"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -21,19 +37,19 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debugButton" translatesAutoresizingMaskIntoConstraints="NO" id="fFM-y6-rqq">
-                                <rect key="frame" x="149.5" y="64" width="115" height="113"/>
+                                <rect key="frame" x="149.5" y="108" width="115" height="113"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fFM-y6-rqq" secondAttribute="height" multiplier="115:113" id="b5E-JS-Ghf"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debugButton" translatesAutoresizingMaskIntoConstraints="NO" id="kap-dB-7OJ">
-                                <rect key="frame" x="20" y="120.5" width="115" height="113"/>
+                                <rect key="frame" x="20" y="164.5" width="115" height="113"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kap-dB-7OJ" secondAttribute="height" multiplier="115:113" id="uKp-7n-vlg"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debugButton" translatesAutoresizingMaskIntoConstraints="NO" id="q4d-0m-rri">
-                                <rect key="frame" x="270" y="120.5" width="115" height="113"/>
+                                <rect key="frame" x="270" y="164.5" width="115" height="113"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="q4d-0m-rri" secondAttribute="height" multiplier="115:113" id="C5z-Fz-yTp"/>
                                 </constraints>
@@ -45,7 +61,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winky" translatesAutoresizingMaskIntoConstraints="NO" id="jdi-u5-kp3">
-                                <rect key="frame" x="51" y="253.5" width="312.00000000000006" height="419"/>
+                                <rect key="frame" x="67.5" y="297.5" width="279.00000000000006" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jdi-u5-kp3" secondAttribute="height" multiplier="374:502" id="PbE-Zt-niO"/>
                                 </constraints>
@@ -95,13 +111,38 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="iPb-JV-MJa"/>
                     <connections>
                         <outlet property="bgview" destination="RvH-EM-yd6" id="lrc-hb-R4e"/>
+                        <outlet property="story1View" destination="kap-dB-7OJ" id="FIX-2q-oqx"/>
+                        <outlet property="story2View" destination="fFM-y6-rqq" id="nwg-ee-uYW"/>
+                        <outlet property="story3View" destination="q4d-0m-rri" id="Xyr-m8-gD3"/>
+                        <outlet property="story4View" destination="pTg-xu-r31" id="jFW-2W-AvR"/>
+                        <outlet property="story5View" destination="jhn-Yv-8zM" id="rlw-Z6-BsE"/>
+                        <outlet property="story6View" destination="NBx-Hb-IPZ" id="oZY-Rt-2Ra"/>
+                        <outlet property="winkyImageView" destination="jdi-u5-kp3" id="T0X-5w-0JC"/>
+                        <segue destination="p1I-7U-Fjc" kind="show" identifier="story" id="0EN-yZ-boB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+            <point key="canvasLocation" x="557" y="-232"/>
+        </scene>
+        <!--Story View Controller-->
+        <scene sceneID="eSk-so-2RU">
+            <objects>
+                <viewController id="p1I-7U-Fjc" customClass="StoryViewController" customModule="NC1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DM1-2G-JcA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="pdu-JC-YEz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZiG-xE-RUb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qlo-rW-utN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1504" y="-232"/>
         </scene>
     </scenes>
     <resources>
