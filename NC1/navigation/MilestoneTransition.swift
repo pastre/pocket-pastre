@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class StoryDetailPushTransition: NSObject, UIViewControllerAnimatedTransitioning {
+class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     let fromDelegate: StoryDetailTransitionAnimatorDelegate
     let storyDetailVc: StoryViewController

@@ -188,7 +188,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: StoryDetailTransitionAnimatorDelegate {
+extension ViewController: MilestoneTransitionAnimatorDelegate {
     func frame() -> CGRect? {
         return self.animojiView.frame
     }

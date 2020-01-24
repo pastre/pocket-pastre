@@ -16,9 +16,11 @@
 		D7C14C1423DB5A3900ECAC83 /* MilestoneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1323DB5A3900ECAC83 /* MilestoneLayout.swift */; };
 		D7C14C1623DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1523DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift */; };
 		D7C14C1D23DB732700ECAC83 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1C23DB732700ECAC83 /* NavigationController.swift */; };
-		D7C14C1F23DB73E300ECAC83 /* StoryDetailPushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1E23DB73E300ECAC83 /* StoryDetailPushTransition.swift */; };
-		D7C14C2123DB742A00ECAC83 /* StoryDetailTransitionAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C2023DB742A00ECAC83 /* StoryDetailTransitionAnimatorDelegate.swift */; };
+		D7C14C1F23DB73E300ECAC83 /* MilestonePushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1E23DB73E300ECAC83 /* MilestonePushTransition.swift */; };
+		D7C14C2123DB742A00ECAC83 /* MilestoneTransitionAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C2023DB742A00ECAC83 /* MilestoneTransitionAnimatorDelegate.swift */; };
 		D7C14C2323DB7A0A00ECAC83 /* AnimojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C2223DB7A0A00ECAC83 /* AnimojiView.swift */; };
+		D7C14C2523DB8EBE00ECAC83 /* MilestonePopTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C2423DB8EBE00ECAC83 /* MilestonePopTransition.swift */; };
+		D7C14C2723DB8F0800ECAC83 /* MilestoneTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C2623DB8F0800ECAC83 /* MilestoneTransition.swift */; };
 		D7FFA64723D7878D00A2268A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFA64623D7878D00A2268A /* AppDelegate.swift */; };
 		D7FFA64923D7878D00A2268A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFA64823D7878D00A2268A /* SceneDelegate.swift */; };
 		D7FFA64B23D7878D00A2268A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFA64A23D7878D00A2268A /* ViewController.swift */; };
@@ -38,9 +40,11 @@
 		D7C14C1323DB5A3900ECAC83 /* MilestoneLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneLayout.swift; sourceTree = "<group>"; };
 		D7C14C1523DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollectionViewCell.swift; sourceTree = "<group>"; };
 		D7C14C1C23DB732700ECAC83 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		D7C14C1E23DB73E300ECAC83 /* StoryDetailPushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailPushTransition.swift; sourceTree = "<group>"; };
-		D7C14C2023DB742A00ECAC83 /* StoryDetailTransitionAnimatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailTransitionAnimatorDelegate.swift; sourceTree = "<group>"; };
+		D7C14C1E23DB73E300ECAC83 /* MilestonePushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonePushTransition.swift; sourceTree = "<group>"; };
+		D7C14C2023DB742A00ECAC83 /* MilestoneTransitionAnimatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneTransitionAnimatorDelegate.swift; sourceTree = "<group>"; };
 		D7C14C2223DB7A0A00ECAC83 /* AnimojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimojiView.swift; sourceTree = "<group>"; };
+		D7C14C2423DB8EBE00ECAC83 /* MilestonePopTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestonePopTransition.swift; sourceTree = "<group>"; };
+		D7C14C2623DB8F0800ECAC83 /* MilestoneTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneTransition.swift; sourceTree = "<group>"; };
 		D7FFA64323D7878D00A2268A /* NC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NC1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FFA64623D7878D00A2268A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7FFA64823D7878D00A2268A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,8 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				D7C14C1C23DB732700ECAC83 /* NavigationController.swift */,
-				D7C14C1E23DB73E300ECAC83 /* StoryDetailPushTransition.swift */,
-				D7C14C2023DB742A00ECAC83 /* StoryDetailTransitionAnimatorDelegate.swift */,
+				D7C14C1E23DB73E300ECAC83 /* MilestonePushTransition.swift */,
+				D7C14C2023DB742A00ECAC83 /* MilestoneTransitionAnimatorDelegate.swift */,
+				D7C14C2423DB8EBE00ECAC83 /* MilestonePopTransition.swift */,
+				D7C14C2623DB8F0800ECAC83 /* MilestoneTransition.swift */,
 			);
 			path = navigation;
 			sourceTree = "<group>";
@@ -212,7 +218,9 @@
 				D7C14C0A23DB22D100ECAC83 /* Story.swift in Sources */,
 				D7C14C0523D8D05D00ECAC83 /* StoryViewController.swift in Sources */,
 				D7C14C1423DB5A3900ECAC83 /* MilestoneLayout.swift in Sources */,
+				D7C14C2523DB8EBE00ECAC83 /* MilestonePopTransition.swift in Sources */,
 				D7C14C0C23DB22DA00ECAC83 /* Milestone.swift in Sources */,
+				D7C14C2723DB8F0800ECAC83 /* MilestoneTransition.swift in Sources */,
 				D7FFA68323D7927A00A2268A /* Extensions.swift in Sources */,
 				D7C14C1123DB3B7600ECAC83 /* AnimatedGradientBorderView.swift in Sources */,
 				D7FFA64B23D7878D00A2268A /* ViewController.swift in Sources */,
@@ -221,10 +229,10 @@
 				D7FFA64723D7878D00A2268A /* AppDelegate.swift in Sources */,
 				D7C14C1623DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift in Sources */,
 				D7C14C0E23DB25DF00ECAC83 /* Manager.swift in Sources */,
-				D7C14C2123DB742A00ECAC83 /* StoryDetailTransitionAnimatorDelegate.swift in Sources */,
+				D7C14C2123DB742A00ECAC83 /* MilestoneTransitionAnimatorDelegate.swift in Sources */,
 				D7FFA64923D7878D00A2268A /* SceneDelegate.swift in Sources */,
 				D7C14C2323DB7A0A00ECAC83 /* AnimojiView.swift in Sources */,
-				D7C14C1F23DB73E300ECAC83 /* StoryDetailPushTransition.swift in Sources */,
+				D7C14C1F23DB73E300ECAC83 /* MilestonePushTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

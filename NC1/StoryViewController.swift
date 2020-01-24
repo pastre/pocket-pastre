@@ -73,7 +73,7 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
 
 
 
-extension StoryViewController: StoryDetailTransitionAnimatorDelegate {
+extension StoryViewController: MilestoneTransitionAnimatorDelegate {
     func frame() -> CGRect? {
         
         self.animojiView.frame

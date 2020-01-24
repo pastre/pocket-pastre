@@ -23,11 +23,12 @@ class NavigationController: UINavigationController, UINavigationControllerDelega
         
         var result: UIViewControllerAnimatedTransitioning?
         
-        if let milestoneVc = toVC as? StoryViewController, operation == .push {
-            
-            result = StoryDetailPushTransition(fromDelegate: fromVC, toStoryDetailVc: milestoneVc)
-            
-            print("AEEEE", result)
+        if let milestoneVc = toVC as? StoryViewController {
+            if operation == .push {
+                result = MilestonePushTransition(fromDelegate: fromVC, toStoryDetailVc: milestoneVc)
+            } else if operation == .pop {
+                
+            }
             
         }
         
