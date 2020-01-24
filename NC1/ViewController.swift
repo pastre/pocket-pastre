@@ -10,8 +10,6 @@ import UIKit
 import SpriteKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var bgview: UIView!
     
     @IBOutlet weak var story1View: UIImageView!
     @IBOutlet weak var story2View: UIImageView!
@@ -29,55 +27,21 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.setupCABackground()
-        
         self.setupViewPan()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     // MARK: - Setup functions
     
-    func setupCABackground() {
-        
-        let backgroundView: UIView = {
-            let view = UIView()
-            
-            view.translatesAutoresizingMaskIntoConstraints = false
-            view.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
-            
-            return view
-        }()
-        
-        self.bgview.addSubview(backgroundView)
-        
-        backgroundView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        backgroundView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        backgroundView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        backgroundView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        
-        let starsLayer = CAEmitterLayer()
-        
-        starsLayer.emitterPosition = self.view.center
-        starsLayer.emitterSize = self.view.frame.size
-        starsLayer.emitterShape = .cuboid
-        
-        
-        let cell = CAEmitterCell()
-        
-        cell.birthRate = 6
-        cell.lifetime = 5
-        cell.alphaSpeed = -1.5
-        cell.scale = 0.5
-        
-        
-        cell.color = UIColor.white.cgColor
-        cell.contents = UIImage.circle(diameter: 5, color: UIColor.white.withAlphaComponent(0.7)).cgImage
-        
-        starsLayer.emitterCells = [cell]
-        
-        backgroundView.layer.addSublayer(starsLayer)
-        
-        print("Configured CA BG")
-    }
     
     func setupViewPan() {
         
@@ -122,7 +86,7 @@ class ViewController: UIViewController {
         }
     
         if isBig ?? false {
-            self.performSegue(withIdentifier: "story", sender: nil)
+            self.performSegue(withIdentifier: "story", sender: self.getButtons().firstIndex(of: view))
         }
         
         self.prevLocation = nil
@@ -200,7 +164,15 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let dest = segue.destination as? StoryViewController else { return }
+        
+        if let viewIndex = sender as? Int {
+        
+            guard let dest = segue.destination as? StoryViewController else { return }
+            
+            dest.story = Manager.instance.getStory(at: viewIndex)
+            
+        }
+        
         
         // TODO: - Add story to view controller
     }
