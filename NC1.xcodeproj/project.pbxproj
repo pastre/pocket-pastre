@@ -13,7 +13,7 @@
 		D7C14C0C23DB22DA00ECAC83 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C0B23DB22DA00ECAC83 /* Milestone.swift */; };
 		D7C14C0E23DB25DF00ECAC83 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C0D23DB25DF00ECAC83 /* Manager.swift */; };
 		D7C14C1123DB3B7600ECAC83 /* AnimatedGradientBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1023DB3B7600ECAC83 /* AnimatedGradientBorderView.swift */; };
-		D7C14C1423DB5A3900ECAC83 /* MilestoneLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1323DB5A3900ECAC83 /* MilestoneLayoutAttributes.swift */; };
+		D7C14C1423DB5A3900ECAC83 /* MilestoneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1323DB5A3900ECAC83 /* MilestoneLayout.swift */; };
 		D7C14C1623DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1523DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift */; };
 		D7FFA64723D7878D00A2268A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFA64623D7878D00A2268A /* AppDelegate.swift */; };
 		D7FFA64923D7878D00A2268A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFA64823D7878D00A2268A /* SceneDelegate.swift */; };
@@ -31,7 +31,7 @@
 		D7C14C0B23DB22DA00ECAC83 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		D7C14C0D23DB25DF00ECAC83 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		D7C14C1023DB3B7600ECAC83 /* AnimatedGradientBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientBorderView.swift; sourceTree = "<group>"; };
-		D7C14C1323DB5A3900ECAC83 /* MilestoneLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneLayoutAttributes.swift; sourceTree = "<group>"; };
+		D7C14C1323DB5A3900ECAC83 /* MilestoneLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneLayout.swift; sourceTree = "<group>"; };
 		D7C14C1523DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollectionViewCell.swift; sourceTree = "<group>"; };
 		D7FFA64323D7878D00A2268A /* NC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NC1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FFA64623D7878D00A2268A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		D7C14C1223DB59E100ECAC83 /* milestoneCollection */ = {
 			isa = PBXGroup;
 			children = (
-				D7C14C1323DB5A3900ECAC83 /* MilestoneLayoutAttributes.swift */,
+				D7C14C1323DB5A3900ECAC83 /* MilestoneLayout.swift */,
 				D7C14C1523DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift */,
 			);
 			path = milestoneCollection;
@@ -191,7 +191,7 @@
 			files = (
 				D7C14C0A23DB22D100ECAC83 /* Story.swift in Sources */,
 				D7C14C0523D8D05D00ECAC83 /* StoryViewController.swift in Sources */,
-				D7C14C1423DB5A3900ECAC83 /* MilestoneLayoutAttributes.swift in Sources */,
+				D7C14C1423DB5A3900ECAC83 /* MilestoneLayout.swift in Sources */,
 				D7C14C0C23DB22DA00ECAC83 /* Milestone.swift in Sources */,
 				D7FFA68323D7927A00A2268A /* Extensions.swift in Sources */,
 				D7C14C1123DB3B7600ECAC83 /* AnimatedGradientBorderView.swift in Sources */,
