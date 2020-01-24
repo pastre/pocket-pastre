@@ -51,8 +51,6 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyDeselected", for: indexPath)
 //        let milestone = self.story.milestones[indexPath.item]
         
-        
-        
         return cell
     }
     
@@ -60,5 +58,14 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
         let size = collectionView.frame.height * 0.6
         return CGSize(width: size, height: size)
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
+        return CGPoint(x: 100, y: 100)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return -90
+    }
+    
 }

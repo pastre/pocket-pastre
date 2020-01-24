@@ -142,16 +142,11 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6M7-QU-Tqg">
-                                <rect key="frame" x="20" y="593" width="374" height="269"/>
+                                <rect key="frame" x="0.0" y="593" width="414" height="269"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ne2-lr-KPY">
-                                    <size key="itemSize" width="125" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <collectionViewLayout key="collectionViewLayout" id="KUC-j1-xfl" customClass="MilestoneLayout" customModule="NC1" customModuleProvider="target"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="storyDeselected" id="H5r-XZ-uyv">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="storyDeselected" id="H5r-XZ-uyv" customClass="MilestoneCollectionViewCell" customModule="NC1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zAA-wP-Wkf">
@@ -243,8 +238,8 @@
                             <constraint firstItem="6M7-QU-Tqg" firstAttribute="height" secondItem="DM1-2G-JcA" secondAttribute="height" multiplier="0.3" id="56u-2W-PaD"/>
                             <constraint firstAttribute="bottom" secondItem="aYW-CQ-BJ3" secondAttribute="bottom" id="7dj-w7-n10"/>
                             <constraint firstItem="pdu-JC-YEz" firstAttribute="trailing" secondItem="aYW-CQ-BJ3" secondAttribute="trailing" id="8XB-k0-2qz"/>
-                            <constraint firstItem="6M7-QU-Tqg" firstAttribute="leading" secondItem="pdu-JC-YEz" secondAttribute="leading" constant="20" id="Enj-Va-P7N"/>
-                            <constraint firstItem="pdu-JC-YEz" firstAttribute="trailing" secondItem="6M7-QU-Tqg" secondAttribute="trailing" constant="20" id="JEZ-F3-bbg"/>
+                            <constraint firstItem="6M7-QU-Tqg" firstAttribute="leading" secondItem="pdu-JC-YEz" secondAttribute="leading" id="Enj-Va-P7N"/>
+                            <constraint firstItem="pdu-JC-YEz" firstAttribute="trailing" secondItem="6M7-QU-Tqg" secondAttribute="trailing" id="JEZ-F3-bbg"/>
                             <constraint firstItem="6M7-QU-Tqg" firstAttribute="bottom" secondItem="pdu-JC-YEz" secondAttribute="bottom" id="KYA-39-bnQ"/>
                             <constraint firstItem="pdu-JC-YEz" firstAttribute="trailing" secondItem="kgn-Eg-rjT" secondAttribute="trailing" id="Nw3-j6-RO8"/>
                             <constraint firstItem="6M7-QU-Tqg" firstAttribute="top" secondItem="kgn-Eg-rjT" secondAttribute="bottom" constant="10" id="aVC-it-vpl"/>

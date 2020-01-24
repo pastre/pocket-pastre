@@ -25,7 +25,7 @@ class AnimatedGradientBorderView: UIView {
         border.colors = [CGColor(srgbRed: 0, green: 180/255, blue: 196/255, alpha: 1), CGColor(srgbRed: 186/255, green: 0, blue: 221/255, alpha: 1)]
         border.locations = [0, 1]
         border.startPoint = .zero
-        border.endPoint = CGPoint(x: 0, y: 1)
+        border.endPoint = CGPoint(x: 1, y: 1)
         border.frame = self.bounds
         
         self.layer.insertSublayer(border, at: 0)

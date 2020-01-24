@@ -13,6 +13,8 @@
 		D7C14C0C23DB22DA00ECAC83 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C0B23DB22DA00ECAC83 /* Milestone.swift */; };
 		D7C14C0E23DB25DF00ECAC83 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C0D23DB25DF00ECAC83 /* Manager.swift */; };
 		D7C14C1123DB3B7600ECAC83 /* AnimatedGradientBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1023DB3B7600ECAC83 /* AnimatedGradientBorderView.swift */; };
+		D7C14C1423DB5A3900ECAC83 /* MilestoneLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1323DB5A3900ECAC83 /* MilestoneLayoutAttributes.swift */; };
+		D7C14C1623DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1523DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift */; };
 		D7FFA64723D7878D00A2268A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFA64623D7878D00A2268A /* AppDelegate.swift */; };
 		D7FFA64923D7878D00A2268A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFA64823D7878D00A2268A /* SceneDelegate.swift */; };
 		D7FFA64B23D7878D00A2268A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFA64A23D7878D00A2268A /* ViewController.swift */; };
@@ -29,6 +31,8 @@
 		D7C14C0B23DB22DA00ECAC83 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		D7C14C0D23DB25DF00ECAC83 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		D7C14C1023DB3B7600ECAC83 /* AnimatedGradientBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientBorderView.swift; sourceTree = "<group>"; };
+		D7C14C1323DB5A3900ECAC83 /* MilestoneLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneLayoutAttributes.swift; sourceTree = "<group>"; };
+		D7C14C1523DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollectionViewCell.swift; sourceTree = "<group>"; };
 		D7FFA64323D7878D00A2268A /* NC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NC1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FFA64623D7878D00A2268A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7FFA64823D7878D00A2268A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,15 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		D7C14C1223DB59E100ECAC83 /* milestoneCollection */ = {
+			isa = PBXGroup;
+			children = (
+				D7C14C1323DB5A3900ECAC83 /* MilestoneLayoutAttributes.swift */,
+				D7C14C1523DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift */,
+			);
+			path = milestoneCollection;
+			sourceTree = "<group>";
+		};
 		D7FFA63A23D7878D00A2268A = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +102,7 @@
 		D7FFA64523D7878D00A2268A /* NC1 */ = {
 			isa = PBXGroup;
 			children = (
+				D7C14C1223DB59E100ECAC83 /* milestoneCollection */,
 				D7C14C0F23DB3B6700ECAC83 /* view */,
 				D7C14C0823DB22C400ECAC83 /* model */,
 				D7FFA64623D7878D00A2268A /* AppDelegate.swift */,
@@ -177,12 +191,14 @@
 			files = (
 				D7C14C0A23DB22D100ECAC83 /* Story.swift in Sources */,
 				D7C14C0523D8D05D00ECAC83 /* StoryViewController.swift in Sources */,
+				D7C14C1423DB5A3900ECAC83 /* MilestoneLayoutAttributes.swift in Sources */,
 				D7C14C0C23DB22DA00ECAC83 /* Milestone.swift in Sources */,
 				D7FFA68323D7927A00A2268A /* Extensions.swift in Sources */,
 				D7C14C1123DB3B7600ECAC83 /* AnimatedGradientBorderView.swift in Sources */,
 				D7FFA64B23D7878D00A2268A /* ViewController.swift in Sources */,
 				D7C14C0723DA3BAF00ECAC83 /* BackgroundView.swift in Sources */,
 				D7FFA64723D7878D00A2268A /* AppDelegate.swift in Sources */,
+				D7C14C1623DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift in Sources */,
 				D7C14C0E23DB25DF00ECAC83 /* Manager.swift in Sources */,
 				D7FFA64923D7878D00A2268A /* SceneDelegate.swift in Sources */,
 			);
