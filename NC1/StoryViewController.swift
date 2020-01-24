@@ -12,6 +12,7 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
 
     @IBOutlet weak var storiesCollectionView: UICollectionView!
     
+    @IBOutlet weak var animojiView: AnimojiView!
     var story: Story!
     
     override func viewDidLoad() {
@@ -67,5 +68,29 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return -90
     }
+    
+}
+
+
+
+extension StoryViewController: StoryDetailTransitionAnimatorDelegate {
+    func frame() -> CGRect? {
+        
+        self.animojiView.frame
+    }
+    
+    func transitionAnimojiView() -> AnimojiView {
+    
+        return self.animojiView
+    }
+    
+    func transitionWillStart() {
+        self.animojiView.isHidden = true
+    }
+
+    func transitionDidEnd() {
+        self.animojiView.isHidden = false
+    }
+
     
 }

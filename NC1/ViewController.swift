@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var winkyImageView: UIImageView!
     
+    
+    @IBOutlet weak var animojiView: AnimojiView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -86,7 +89,7 @@ class ViewController: UIViewController {
         }
     
         if isBig ?? false {
-            self.performSegue(withIdentifier: "story", sender: self.getButtons().firstIndex(of: view))
+            self.onStorySelected(view)
         }
         
         self.prevLocation = nil
@@ -112,6 +115,12 @@ class ViewController: UIViewController {
             
             self.isBig = false
         }
+    }
+    
+    func onStorySelected(_ view: UIView) {
+        guard let index = self.getButtons().firstIndex(of: view) else { return }
+        
+        self.performSegue(withIdentifier: "story", sender: index)
     }
  
     // MARK: - Callbacks
@@ -179,3 +188,23 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: StoryDetailTransitionAnimatorDelegate {
+    func frame() -> CGRect? {
+        return self.animojiView.frame
+    }
+    
+    func transitionAnimojiView() -> AnimojiView {
+        return self.animojiView
+    }
+    
+    func transitionWillStart() {
+        print("Ta comecaaando na VC")
+    }
+
+    func transitionDidEnd() {
+        
+        print("Acabou na VC")
+    }
+
+    
+}

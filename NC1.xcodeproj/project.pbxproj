@@ -15,6 +15,10 @@
 		D7C14C1123DB3B7600ECAC83 /* AnimatedGradientBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1023DB3B7600ECAC83 /* AnimatedGradientBorderView.swift */; };
 		D7C14C1423DB5A3900ECAC83 /* MilestoneLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1323DB5A3900ECAC83 /* MilestoneLayout.swift */; };
 		D7C14C1623DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1523DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift */; };
+		D7C14C1D23DB732700ECAC83 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1C23DB732700ECAC83 /* NavigationController.swift */; };
+		D7C14C1F23DB73E300ECAC83 /* StoryDetailPushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C1E23DB73E300ECAC83 /* StoryDetailPushTransition.swift */; };
+		D7C14C2123DB742A00ECAC83 /* StoryDetailTransitionAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C2023DB742A00ECAC83 /* StoryDetailTransitionAnimatorDelegate.swift */; };
+		D7C14C2323DB7A0A00ECAC83 /* AnimojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C2223DB7A0A00ECAC83 /* AnimojiView.swift */; };
 		D7FFA64723D7878D00A2268A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFA64623D7878D00A2268A /* AppDelegate.swift */; };
 		D7FFA64923D7878D00A2268A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFA64823D7878D00A2268A /* SceneDelegate.swift */; };
 		D7FFA64B23D7878D00A2268A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FFA64A23D7878D00A2268A /* ViewController.swift */; };
@@ -33,6 +37,10 @@
 		D7C14C1023DB3B7600ECAC83 /* AnimatedGradientBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientBorderView.swift; sourceTree = "<group>"; };
 		D7C14C1323DB5A3900ECAC83 /* MilestoneLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneLayout.swift; sourceTree = "<group>"; };
 		D7C14C1523DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneCollectionViewCell.swift; sourceTree = "<group>"; };
+		D7C14C1C23DB732700ECAC83 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		D7C14C1E23DB73E300ECAC83 /* StoryDetailPushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailPushTransition.swift; sourceTree = "<group>"; };
+		D7C14C2023DB742A00ECAC83 /* StoryDetailTransitionAnimatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailTransitionAnimatorDelegate.swift; sourceTree = "<group>"; };
+		D7C14C2223DB7A0A00ECAC83 /* AnimojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimojiView.swift; sourceTree = "<group>"; };
 		D7FFA64323D7878D00A2268A /* NC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NC1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FFA64623D7878D00A2268A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7FFA64823D7878D00A2268A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +78,7 @@
 			children = (
 				D7C14C0623DA3BAF00ECAC83 /* BackgroundView.swift */,
 				D7C14C1023DB3B7600ECAC83 /* AnimatedGradientBorderView.swift */,
+				D7C14C2223DB7A0A00ECAC83 /* AnimojiView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -81,6 +90,16 @@
 				D7C14C1523DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift */,
 			);
 			path = milestoneCollection;
+			sourceTree = "<group>";
+		};
+		D7C14C1B23DB730500ECAC83 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D7C14C1C23DB732700ECAC83 /* NavigationController.swift */,
+				D7C14C1E23DB73E300ECAC83 /* StoryDetailPushTransition.swift */,
+				D7C14C2023DB742A00ECAC83 /* StoryDetailTransitionAnimatorDelegate.swift */,
+			);
+			path = navigation;
 			sourceTree = "<group>";
 		};
 		D7FFA63A23D7878D00A2268A = {
@@ -102,6 +121,7 @@
 		D7FFA64523D7878D00A2268A /* NC1 */ = {
 			isa = PBXGroup;
 			children = (
+				D7C14C1B23DB730500ECAC83 /* navigation */,
 				D7C14C1223DB59E100ECAC83 /* milestoneCollection */,
 				D7C14C0F23DB3B6700ECAC83 /* view */,
 				D7C14C0823DB22C400ECAC83 /* model */,
@@ -197,10 +217,14 @@
 				D7C14C1123DB3B7600ECAC83 /* AnimatedGradientBorderView.swift in Sources */,
 				D7FFA64B23D7878D00A2268A /* ViewController.swift in Sources */,
 				D7C14C0723DA3BAF00ECAC83 /* BackgroundView.swift in Sources */,
+				D7C14C1D23DB732700ECAC83 /* NavigationController.swift in Sources */,
 				D7FFA64723D7878D00A2268A /* AppDelegate.swift in Sources */,
 				D7C14C1623DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift in Sources */,
 				D7C14C0E23DB25DF00ECAC83 /* Manager.swift in Sources */,
+				D7C14C2123DB742A00ECAC83 /* StoryDetailTransitionAnimatorDelegate.swift in Sources */,
 				D7FFA64923D7878D00A2268A /* SceneDelegate.swift in Sources */,
+				D7C14C2323DB7A0A00ECAC83 /* AnimojiView.swift in Sources */,
+				D7C14C1F23DB73E300ECAC83 /* StoryDetailPushTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
