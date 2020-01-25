@@ -27,8 +27,19 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onTap))
+        
+        self.animojiView.addGestureRecognizer(tapGesture)
+        
     }
+    
+    
 
+    @objc func onTap() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         

@@ -100,10 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				D7C14C1C23DB732700ECAC83 /* NavigationController.swift */,
-				D7C14C1E23DB73E300ECAC83 /* MilestonePushTransition.swift */,
-				D7C14C2023DB742A00ECAC83 /* MilestoneTransitionAnimatorDelegate.swift */,
-				D7C14C2423DB8EBE00ECAC83 /* MilestonePopTransition.swift */,
 				D7C14C2623DB8F0800ECAC83 /* MilestoneTransition.swift */,
+				D7C14C1E23DB73E300ECAC83 /* MilestonePushTransition.swift */,
+				D7C14C2423DB8EBE00ECAC83 /* MilestonePopTransition.swift */,
+				D7C14C2023DB742A00ECAC83 /* MilestoneTransitionAnimatorDelegate.swift */,
 			);
 			path = navigation;
 			sourceTree = "<group>";

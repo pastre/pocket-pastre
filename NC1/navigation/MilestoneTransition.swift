@@ -11,13 +11,13 @@ import UIKit
 
 class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
-    let fromDelegate: StoryDetailTransitionAnimatorDelegate
-    let storyDetailVc: StoryViewController
+    let fromDelegate: MilestoneTransitionAnimatorDelegate!
+    let toDelegate: MilestoneTransitionAnimatorDelegate!
     
-    init? (fromDelegate: Any, toStoryDetailVc vc: StoryViewController) {
-        guard let del = fromDelegate as? StoryDetailTransitionAnimatorDelegate else { return nil }
+    init? (fromDelegate: Any, toStoryDetailVc vc: MilestoneTransitionAnimatorDelegate) {
+        guard let del = fromDelegate as? MilestoneTransitionAnimatorDelegate else { return nil }
         self.fromDelegate = del
-        self.storyDetailVc = vc
+        self.toDelegate = vc
     }
     
     
@@ -28,51 +28,6 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
-        guard let toView = transitionContext.view(forKey: .to) else { return }
-        
-        let containerView = transitionContext.containerView
-                
-        let transitionAnimojiView = self.fromDelegate.transitionAnimojiView()
-        let toAnimationView = self.storyDetailVc.animojiView
-        transitionAnimojiView.translatesAutoresizingMaskIntoConstraints = true
-        
-        containerView.addSubview(toView)
-        containerView.addSubview(transitionAnimojiView)
-        
-        let duration = self.transitionDuration(using: transitionContext)
-        let spring: CGFloat = 0.95
-        
-        let deltaX = toAnimationView!.center.x - transitionAnimojiView.center.x
-        let deltaY = toAnimationView!.center.y - transitionAnimojiView.center.y + toAnimationView!.frame.height / 2
-        
-        let scaleX = toAnimationView!.frame.width / transitionAnimojiView.frame.width
-        let scaleY = toAnimationView!.frame.width / transitionAnimojiView.frame.width
-
-        let animator = UIViewPropertyAnimator(duration: duration, dampingRatio: spring) {
-            transitionAnimojiView.transform = transitionAnimojiView.transform.translatedBy(x: deltaX, y: deltaY).scaledBy(x: scaleX, y: scaleY)
-        }
-        
-        
-        animator.addCompletion { (position) in
-            // Remove the transition image
-//            self.transitionView.removeFromSuperview()
-
-            // Tell UIKit we're done with the transition
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-
-            // Tell our view controllers that we're done, too.
-            self.storyDetailVc.transitionDidEnd()
-            self.fromDelegate.transitionDidEnd()
-            
-            transitionAnimojiView.removeFromSuperview()
-            
-            print("Completed animation")
-        }
-
-
-        self.storyDetailVc.transitionWillStart()
-        self.fromDelegate.transitionWillStart()
-        animator.startAnimation()
     }
     
     

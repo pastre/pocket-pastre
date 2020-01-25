@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var winkyImageView: UIImageView!
     
-    
     @IBOutlet weak var animojiView: AnimojiView!
     
     override func viewDidLoad() {
@@ -194,6 +193,7 @@ extension ViewController: MilestoneTransitionAnimatorDelegate {
     }
     
     func transitionAnimojiView() -> AnimojiView {
+        
         return self.animojiView
     }
     
