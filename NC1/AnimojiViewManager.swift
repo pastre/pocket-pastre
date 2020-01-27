@@ -13,9 +13,10 @@ class AnimojiViewManager {
     static let instance = AnimojiViewManager()
     
     private let view: AnimojiView = {
-       let view = AnimojiView()
+        let view = AnimojiView()
         
-        view.backgroundColor = .green
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.00001)
+        
         view.isUserInteractionEnabled = true
         
         return view
@@ -41,7 +42,7 @@ class AnimojiViewManager {
     
     func configure(on view: AnimojiViewContainer) {
         
-        let frame = view.getDestinationFrame()
+        var frame = view.getDestinationFrame()
         
         view.getParentView().addSubview(self.view)
         
