@@ -28,7 +28,7 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
         
         let containerView = transitionContext.containerView
         guard let destinationView = transitionContext.view(forKey: .to) else { return }
-        guard let sourceView = transitionContext.view(forKey: .from) else { return }
+        
         
         let sourceAnimojiFrame = self.source.getSourceFrame()
         let destinationAnimojiFrame = self.destination.getDestinationFrame()
@@ -37,25 +37,14 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
         
         animojiView.frame = sourceAnimojiFrame
         
-        var scaleX = destinationAnimojiFrame.width / sourceAnimojiFrame.width
-        var scaleY = destinationAnimojiFrame.height / sourceAnimojiFrame.height
-        
-        let deltaX = destinationAnimojiFrame.center.x - sourceAnimojiFrame.center.x
-        let deltaY = destinationAnimojiFrame.center.y - sourceAnimojiFrame.center.y// + (destAnimoji.frame.height / 2 )
         
         containerView.addSubview(destinationView)
         containerView.addSubview(animojiView)
         
-//        if shouldFlip {
-//            scaleX = 1 / scaleX
-//            scaleY = 1 / scaleY
-//            print("Flipou")
-//        }
+        
 
         
          let animator = UIViewPropertyAnimator(duration: self.transitionDuration(using: transitionContext), dampingRatio: 0.95) {
-//            sourceAnimoji.frame = destAnimoji.frame
-//                   animojiView.transform = animojiView.transform.translatedBy(x: deltaX, y: deltaY).scaledBy(x: scaleX, y: scaleY)
             
             animojiView.frame = destinationAnimojiFrame
                     
@@ -64,14 +53,14 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
         
         animator.addCompletion { (position) in
             
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+        transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
 
             self.source.sourceTransitionDidEnd()
             self.destination.destinationTransitionDidEnd()
             
 //            containerView.addSubview(destinationView)
 //
-            animojiView.transform = .identity
+            animojiView.removeFromSuperview()
             
             print("Completed animation")
         }
@@ -96,6 +85,8 @@ protocol AnimojiViewContainer: class {
     
     func destinationTransitionWillStart()
     func destinationTransitionDidEnd()
+    
+    func getParentView() -> UIView
 }
 
 extension CGSize {

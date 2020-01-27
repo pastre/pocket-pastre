@@ -85,6 +85,10 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
 
 
 extension StoryViewController: AnimojiViewContainer {
+    func getParentView() -> UIView {
+        return self.animojiView
+    }
+    
     func getSourceFrame() -> CGRect {
         return self.animojiView.frame
     }

@@ -18,17 +18,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var story5View: UIImageView!
     @IBOutlet weak var story6View: UIImageView!
     
-    @IBOutlet weak var winkyImageView: UIImageView!
+    @IBOutlet weak var animojiView: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         self.setupViewPan()
+//        AnimojiViewManager.instance.configure(on: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -187,12 +189,16 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: AnimojiViewContainer {
+    func getParentView() -> UIView {
+        return self.animojiView
+    }
+    
     func getSourceFrame() -> CGRect {
-        return self.winkyImageView.frame
+        return self.animojiView.frame
     }
     
     func getDestinationFrame() -> CGRect {
-        return self.winkyImageView.frame
+        return self.animojiView.frame
     }
     
     func sourceTransitionWillStart() {

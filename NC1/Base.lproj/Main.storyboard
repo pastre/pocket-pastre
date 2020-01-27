@@ -61,12 +61,6 @@
                                     <constraint firstAttribute="width" secondItem="jhn-Yv-8zM" secondAttribute="height" multiplier="115:113" id="EtB-lm-mHh"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdi-u5-kp3">
-                                <rect key="frame" x="51" y="253.5" width="312" height="419"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="jdi-u5-kp3" secondAttribute="height" multiplier="374:502" id="PbE-Zt-niO"/>
-                                </constraints>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="debugButton" translatesAutoresizingMaskIntoConstraints="NO" id="pTg-xu-r31">
                                 <rect key="frame" x="20" y="692.5" width="115" height="113"/>
                                 <constraints>
@@ -79,6 +73,13 @@
                                     <constraint firstAttribute="width" secondItem="NBx-Hb-IPZ" secondAttribute="height" multiplier="115:113" id="06m-yI-Y7T"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="no4-nf-12U">
+                                <rect key="frame" x="50" y="253.5" width="314" height="419"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="no4-nf-12U" secondAttribute="height" multiplier="3:4" id="ZHL-ua-S9q"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -90,6 +91,7 @@
                             <constraint firstItem="kap-dB-7OJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8fd-ub-5k2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jhn-Yv-8zM" secondAttribute="bottom" id="Ay8-6c-UDy"/>
                             <constraint firstItem="pTg-xu-r31" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="HEe-0R-4Zv"/>
+                            <constraint firstItem="no4-nf-12U" firstAttribute="top" secondItem="q4d-0m-rri" secondAttribute="bottom" constant="20" id="IX3-Lp-6b0"/>
                             <constraint firstItem="jhn-Yv-8zM" firstAttribute="height" secondItem="NBx-Hb-IPZ" secondAttribute="height" id="OCt-4d-VVu"/>
                             <constraint firstItem="pTg-xu-r31" firstAttribute="width" secondItem="pTg-xu-r31" secondAttribute="height" multiplier="115:113" id="POv-k5-LJL"/>
                             <constraint firstItem="jhn-Yv-8zM" firstAttribute="width" secondItem="NBx-Hb-IPZ" secondAttribute="width" id="PmV-QA-ALO"/>
@@ -97,15 +99,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q4d-0m-rri" secondAttribute="trailing" constant="29" id="Vvy-JL-lbx"/>
                             <constraint firstItem="q4d-0m-rri" firstAttribute="centerY" secondItem="kap-dB-7OJ" secondAttribute="centerY" id="WhI-4S-67g"/>
                             <constraint firstItem="jhn-Yv-8zM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WtF-a7-j9I"/>
+                            <constraint firstItem="no4-nf-12U" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="YQY-vv-uIN"/>
                             <constraint firstItem="jhn-Yv-8zM" firstAttribute="width" secondItem="pTg-xu-r31" secondAttribute="width" id="aHL-Ez-hss"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NBx-Hb-IPZ" secondAttribute="trailing" constant="21" id="aLx-V8-RR9"/>
-                            <constraint firstItem="jdi-u5-kp3" firstAttribute="top" secondItem="kap-dB-7OJ" secondAttribute="bottom" constant="20" id="amC-jL-MOL"/>
-                            <constraint firstItem="pTg-xu-r31" firstAttribute="top" secondItem="jdi-u5-kp3" secondAttribute="bottom" constant="20" id="bI5-Rd-Lay"/>
                             <constraint firstItem="q4d-0m-rri" firstAttribute="leading" secondItem="fFM-y6-rqq" secondAttribute="trailing" constant="5.5" id="cui-70-3IP"/>
+                            <constraint firstItem="NBx-Hb-IPZ" firstAttribute="top" secondItem="no4-nf-12U" secondAttribute="bottom" constant="20" id="e4G-ws-mSe"/>
                             <constraint firstItem="jhn-Yv-8zM" firstAttribute="height" secondItem="pTg-xu-r31" secondAttribute="height" id="gIz-Kp-TIW"/>
                             <constraint firstItem="fFM-y6-rqq" firstAttribute="leading" secondItem="kap-dB-7OJ" secondAttribute="trailing" constant="14.5" id="mAO-Ys-YzA"/>
                             <constraint firstItem="pTg-xu-r31" firstAttribute="bottom" secondItem="jhn-Yv-8zM" secondAttribute="centerY" id="oxw-YD-WBU"/>
-                            <constraint firstItem="jdi-u5-kp3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pjo-Cj-ouf"/>
                             <constraint firstItem="kap-dB-7OJ" firstAttribute="top" secondItem="fFM-y6-rqq" secondAttribute="centerY" id="wSK-rW-oZ1"/>
                             <constraint firstItem="fFM-y6-rqq" firstAttribute="width" secondItem="kap-dB-7OJ" secondAttribute="width" id="x2O-kW-Hfk"/>
                             <constraint firstItem="fFM-y6-rqq" firstAttribute="width" secondItem="q4d-0m-rri" secondAttribute="width" id="z0X-l4-Bpl"/>
@@ -115,13 +116,13 @@
                     <navigationItem key="navigationItem" id="iPb-JV-MJa"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="animojiView" destination="no4-nf-12U" id="juB-q0-m7w"/>
                         <outlet property="story1View" destination="kap-dB-7OJ" id="FIX-2q-oqx"/>
                         <outlet property="story2View" destination="fFM-y6-rqq" id="nwg-ee-uYW"/>
                         <outlet property="story3View" destination="q4d-0m-rri" id="Xyr-m8-gD3"/>
                         <outlet property="story4View" destination="pTg-xu-r31" id="jFW-2W-AvR"/>
                         <outlet property="story5View" destination="jhn-Yv-8zM" id="rlw-Z6-BsE"/>
                         <outlet property="story6View" destination="NBx-Hb-IPZ" id="oZY-Rt-2Ra"/>
-                        <outlet property="winkyImageView" destination="jdi-u5-kp3" id="T0X-5w-0JC"/>
                         <segue destination="p1I-7U-Fjc" kind="show" identifier="story" id="0EN-yZ-boB"/>
                     </connections>
                 </viewController>
@@ -175,7 +176,7 @@
                                         <rect key="frame" x="20" y="61" width="374" height="458"/>
                                         <subviews>
                                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storyBorder" translatesAutoresizingMaskIntoConstraints="NO" id="pii-R7-4fl">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="458"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374.00000000000006" height="458"/>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dfN-nM-AAH">
                                                 <rect key="frame" x="10" y="20" width="344" height="418"/>
@@ -203,17 +204,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYI-j1-66b" customClass="AnimojiView" customModule="NC1" customModuleProvider="target">
-                                        <rect key="frame" x="329" y="20" width="75" height="82.5"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winky" translatesAutoresizingMaskIntoConstraints="NO" id="tpZ-IM-uzL">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="82.5"/>
-                                            </imageView>
-                                        </subviews>
+                                        <rect key="frame" x="342" y="20" width="62" height="82.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="tpZ-IM-uzL" firstAttribute="centerX" secondItem="eYI-j1-66b" secondAttribute="centerX" id="8uY-mO-Tob"/>
-                                            <constraint firstItem="tpZ-IM-uzL" firstAttribute="height" secondItem="eYI-j1-66b" secondAttribute="height" id="HeK-5q-N3I"/>
-                                            <constraint firstItem="tpZ-IM-uzL" firstAttribute="width" secondItem="eYI-j1-66b" secondAttribute="width" id="fgH-70-1Fn"/>
-                                            <constraint firstItem="tpZ-IM-uzL" firstAttribute="centerY" secondItem="eYI-j1-66b" secondAttribute="centerY" id="wyZ-uN-JOc"/>
+                                            <constraint firstAttribute="width" secondItem="eYI-j1-66b" secondAttribute="height" multiplier="3:4" id="vMc-NP-ubd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -223,7 +217,6 @@
                                     <constraint firstAttribute="bottom" secondItem="eWh-sQ-buD" secondAttribute="bottom" constant="20" symbolic="YES" id="Ax6-He-Qb7"/>
                                     <constraint firstAttribute="trailing" secondItem="eWh-sQ-buD" secondAttribute="trailing" constant="20" symbolic="YES" id="C06-uq-HDn"/>
                                     <constraint firstItem="eYI-j1-66b" firstAttribute="centerY" secondItem="eWh-sQ-buD" secondAttribute="top" id="MjP-tg-Lj7"/>
-                                    <constraint firstItem="eYI-j1-66b" firstAttribute="width" secondItem="eWh-sQ-buD" secondAttribute="width" multiplier="0.2" id="NhD-ez-7eL"/>
                                     <constraint firstAttribute="trailing" secondItem="eYI-j1-66b" secondAttribute="trailing" constant="10" id="VnE-Yc-zxm"/>
                                     <constraint firstItem="G47-1g-2zk" firstAttribute="top" secondItem="kgn-Eg-rjT" secondAttribute="top" constant="20" symbolic="YES" id="Xu5-yr-cp6"/>
                                     <constraint firstAttribute="trailing" secondItem="G47-1g-2zk" secondAttribute="trailing" constant="20" id="Y0Z-yL-zZI"/>
@@ -266,6 +259,5 @@
         <image name="debugButton" width="115" height="113"/>
         <image name="storyBorder" width="374" height="434"/>
         <image name="storyDeselected" width="119" height="119"/>
-        <image name="winky" width="374" height="502"/>
     </resources>
 </document>
