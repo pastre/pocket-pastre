@@ -16,12 +16,23 @@ class AnimojiViewManager {
        let view = AnimojiView()
         
         view.backgroundColor = .green
+        view.isUserInteractionEnabled = true
         
         return view
     }()
     
+    var delegate: AnimojiViewContainer?
+    
     private init() {
         
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.onViewTapped))
+        
+        self.view.addGestureRecognizer(gesture)
+    }
+    
+    @objc func onViewTapped() {
+        self.delegate?.onAnimojiViewTapped()
     }
     
     func getAnimojiView() -> UIView {
@@ -35,6 +46,11 @@ class AnimojiViewManager {
         view.getParentView().addSubview(self.view)
         
         self.view.frame = frame
+        view.getParentView().bringSubviewToFront(self.view)
+        
+        self.delegate = view
+        
+        print("Configured animoji view on", view)
         
     }
 }

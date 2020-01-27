@@ -62,6 +62,8 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
 //
             animojiView.removeFromSuperview()
             
+            AnimojiViewManager.instance.configure(on: self.destination)
+            
             print("Completed animation")
         }
         
@@ -87,6 +89,8 @@ protocol AnimojiViewContainer: class {
     func destinationTransitionDidEnd()
     
     func getParentView() -> UIView
+    
+    func onAnimojiViewTapped()
 }
 
 extension CGSize {

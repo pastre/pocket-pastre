@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         
         self.setupViewPan()
 //        AnimojiViewManager.instance.configure(on: self)
+//        self.destinationTransitionDidEnd()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -189,16 +190,20 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: AnimojiViewContainer {
+    func onAnimojiViewTapped() {
+        //
+    }
+    
     func getParentView() -> UIView {
-        return self.animojiView
+        return self.view
     }
     
     func getSourceFrame() -> CGRect {
-        return self.animojiView.frame
+        return self.view.convert(self.animojiView.frame, to: self.view)
     }
     
     func getDestinationFrame() -> CGRect {
-        return self.animojiView.frame
+        return self.view.convert(self.animojiView.frame, to: self.view)
     }
     
     func sourceTransitionWillStart() {
@@ -214,7 +219,7 @@ extension ViewController: AnimojiViewContainer {
     }
     
     func destinationTransitionDidEnd() {
-        // TODO
+        self.getButtons().forEach { self.view.bringSubviewToFront($0) }
     }
     
     

@@ -140,12 +140,12 @@
 				D7FFA64823D7878D00A2268A /* SceneDelegate.swift */,
 				D7FFA64A23D7878D00A2268A /* ViewController.swift */,
 				D7C14C0423D8D05D00ECAC83 /* StoryViewController.swift */,
+				D74BDA4A23DF32F500D8DF53 /* AnimojiViewManager.swift */,
 				D7FFA64C23D7878D00A2268A /* Main.storyboard */,
 				D7FFA64F23D7879100A2268A /* Assets.xcassets */,
 				D7FFA65123D7879100A2268A /* LaunchScreen.storyboard */,
 				D7FFA65423D7879100A2268A /* Info.plist */,
 				D7FFA68223D7927A00A2268A /* Extensions.swift */,
-				D74BDA4A23DF32F500D8DF53 /* AnimojiViewManager.swift */,
 			);
 			path = NC1;
 			sourceTree = "<group>";

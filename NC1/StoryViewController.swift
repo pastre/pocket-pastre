@@ -12,6 +12,7 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
 
     @IBOutlet weak var storiesCollectionView: UICollectionView!
     
+    @IBOutlet weak var animojiParentView: UIView!
     @IBOutlet weak var animojiView: AnimojiViewFrame!
     var story: Story!
     
@@ -85,16 +86,22 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
 
 
 extension StoryViewController: AnimojiViewContainer {
+    func onAnimojiViewTapped() {
+         self.onTap()
+    }
+    
     func getParentView() -> UIView {
-        return self.animojiView
+        return self.view
     }
     
     func getSourceFrame() -> CGRect {
-        return self.animojiView.frame
+        return self.animojiParentView.convert(self.animojiView.frame, to: self.view)
+
     }
     
     func getDestinationFrame() -> CGRect {
-        return self.animojiView.frame
+        return self.getSourceFrame()
+
     }
     
     func sourceTransitionWillStart() {
