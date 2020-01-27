@@ -14,6 +14,7 @@ protocol AnimojiViewContainer: class {
     func getDestinationFrame() -> CGRect
     
     func sourceTransitionWillStart()
+    func sourceTransitionAnimation() -> (() -> ())?
     func sourceTransitionDidEnd()
     
     func destinationTransitionWillStart()
@@ -22,5 +23,8 @@ protocol AnimojiViewContainer: class {
     func getParentView() -> UIView
     
     func onAnimojiViewTapped()
+    
+    func animatePresentation(with duration: TimeInterval)
+
 }
 

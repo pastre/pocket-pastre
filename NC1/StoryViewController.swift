@@ -10,6 +10,7 @@ import UIKit
 
 class StoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, AnimojiViewContainer {
 
+    @IBOutlet weak var contentContainerView: AnimatedGradientBorderView!
     @IBOutlet weak var storiesCollectionView: UICollectionView!
     @IBOutlet weak var animojiParentView: UIView!
     @IBOutlet weak var animojiView: AnimojiViewFrame!
@@ -33,12 +34,38 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         self.animojiView.addGestureRecognizer(tapGesture)
         
+        self.setupContentView()
+        self.storiesCollectionView.reloadData()
+        
+    }
+
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.presentContentView()
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    // MARK: - Setup methods
+    
+    func setupContentView() {
+        self.contentContainerView.transform = self.contentContainerView.transform.translatedBy(x: -500, y: 0)
+    }
+    
+    // MARK: - Presentation methods
+    
+    func presentContentView() {
+        UIView.animate(withDuration: 0.5) {
+            
+            self.contentContainerView.transform = .identity
+        }
     }
 
     
@@ -58,6 +85,12 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyDeselected", for: indexPath)
 //        let milestone = self.story.milestones[indexPath.item]
         
+        cell.transform = cell.transform.scaledBy(x: 0.001, y: 0.001)
+        
+        UIView.animate(withDuration: 0.5) {
+            cell.transform = .identity
+        }
+        
         return cell
     }
     
@@ -76,6 +109,18 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     // MARK: - AnimojiViewContainer
+    
+    func sourceTransitionAnimation() -> (() -> ())? {
+        return {
+            self.contentContainerView.transform = self.contentContainerView.transform.translatedBy(x: -500, y: 0)
+            self.storiesCollectionView.visibleCells.forEach {
+                $0.contentView.transform = $0.contentView.transform.scaledBy(x: 0.001, y: 0.001)
+                print("Saca o transform na collection")
+            }
+        
+        }
+    }
+
     
     func onAnimojiViewTapped() {
          self.onTap()
@@ -104,11 +149,21 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func destinationTransitionWillStart() {
-        // TODO
     }
     
     func destinationTransitionDidEnd() {
-        // TODO
+        
+        self.storiesCollectionView.visibleCells.forEach { (cell) in
+            cell.contentView.transform = cell.contentView.transform.scaledBy(x: 0.001, y: 0.001)
+            print("Saca esse transform")
+        }    }
+    
+    func animatePresentation(with duration: TimeInterval) {
+        UIView.animate(withDuration: duration) {
+            self.storiesCollectionView.visibleCells.forEach { (cell) in
+                cell.contentView.transform = .identity
+            }
+        }
     }
     
     

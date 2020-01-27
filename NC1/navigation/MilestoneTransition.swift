@@ -28,6 +28,7 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
         
         let containerView = transitionContext.containerView
         guard let destinationView = transitionContext.view(forKey: .to) else { return }
+        guard let sourceView = transitionContext.view(forKey: .from) else { return }
         
         
         let sourceAnimojiFrame = self.source.getSourceFrame()
@@ -38,13 +39,18 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
         animojiView.frame = sourceAnimojiFrame
         
         
-        containerView.addSubview(destinationView)
+        containerView.addSubview(sourceView)
         containerView.addSubview(animojiView)
         
         
-
-        
-         let animator = UIViewPropertyAnimator(duration: self.transitionDuration(using: transitionContext), dampingRatio: 0.95) {
+        let duration = self.transitionDuration(using: transitionContext)
+         let animator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.95) {
+            
+            if
+                let sourceTransition = self.source.sourceTransitionAnimation() {
+                sourceTransition()
+                print("Source is up!")
+            }
             
             animojiView.frame = destinationAnimojiFrame
                     
@@ -53,7 +59,8 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
         
         animator.addCompletion { (position) in
             
-        transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            containerView.addSubview(destinationView)
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
 
             self.source.sourceTransitionDidEnd()
             self.destination.destinationTransitionDidEnd()
@@ -63,6 +70,8 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
             animojiView.removeFromSuperview()
             
             AnimojiViewManager.instance.configure(on: self.destination)
+            
+            self.destination.animatePresentation(with: 5)
             
             print("Completed animation")
         }

@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 class ViewController: UIViewController, AnimojiViewContainer {
-    
+   
     @IBOutlet weak var story1View: UIImageView!
     @IBOutlet weak var story2View: UIImageView!
     @IBOutlet weak var story3View: UIImageView!
@@ -36,7 +36,16 @@ class ViewController: UIViewController, AnimojiViewContainer {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.currentSelectedView = nil
+        
+        self.setupButtons()
         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.configureButtons()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -46,6 +55,11 @@ class ViewController: UIViewController, AnimojiViewContainer {
     
     // MARK: - Setup functions
     
+    func setupButtons() {
+        self.getButtons().forEach {
+            $0.transform = $0.transform.scaledBy(x: 0.001, y: 0.001)
+        }
+    }
     
     func setupViewPan() {
         
@@ -54,6 +68,16 @@ class ViewController: UIViewController, AnimojiViewContainer {
             
             button.isUserInteractionEnabled = true
             button.addGestureRecognizer(panGesture)
+        }
+    }
+    
+    // MARK: - Configure buttons
+    
+    func configureButtons() {
+        UIView.animate(withDuration: 0.5) {
+            self.getButtons().forEach {
+                $0.transform = .identity
+            }
         }
     }
     
@@ -85,12 +109,14 @@ class ViewController: UIViewController, AnimojiViewContainer {
     
     func onFinished(_ view: UIView) {
     
-        UIView.animate(withDuration: 0.1) {
-            view.transform = .identity
-        }
+       
     
         if isBig ?? false {
             self.onStorySelected(view)
+        } else {
+            UIView.animate(withDuration: 0.1) {
+                       view.transform = .identity
+                   }
         }
         
         self.prevLocation = nil
@@ -118,8 +144,11 @@ class ViewController: UIViewController, AnimojiViewContainer {
         }
     }
     
+    var currentSelectedView: UIView?
+    
     func onStorySelected(_ view: UIView) {
         guard let index = self.getButtons().firstIndex(of: view) else { return }
+        self.currentSelectedView = view
         
         self.performSegue(withIdentifier: "story", sender: index)
     }
@@ -210,17 +239,54 @@ class ViewController: UIViewController, AnimojiViewContainer {
     }
     
     func sourceTransitionDidEnd() {
-        // TODO
+        self.getButtons().forEach {
+            $0.alpha = 1
+            $0.transform = .identity
+        }
     }
     
     func destinationTransitionWillStart() {
-        // TODO
+        
     }
     
     func destinationTransitionDidEnd() {
         self.getButtons().forEach { self.view.bringSubviewToFront($0) }
     }
     
+    func sourceTransitionAnimation() -> (() -> ())? {
+        
+        return {
+//            if let selectedView = self.currentSelectedView {
+//                selectedView.transform = selectedView.transform.scaledBy(x: 5, y: 5)
+//            }
+//
+//            for (i, button) in self.getButtons().enumerated() {
+//                if i < self.getButtons().count / 2 {
+//                    button.transform = button.transform.translatedBy(x: 500, y: 0)
+//                    print("a")
+//                } else {
+//                    button.transform = button.transform.scaledBy(x: 0.001, y: 0.001)
+//                    print("b")
+//                }
+//            }
+            
+            
+            self.getButtons().forEach {
+                let scale: CGFloat = $0 == self.currentSelectedView ? 5 : 0.001
+                $0.transform = $0.transform.scaledBy(x: scale, y: scale)
+                
+                if $0 == self.currentSelectedView {
+                    $0.alpha = 0
+                }
+                
+            }
+            
+        }
+    }
+    
+    func animatePresentation(with duration: TimeInterval) {
+        // TODO
+    }
     
     
 }
