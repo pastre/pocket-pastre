@@ -21,7 +21,7 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 5
+        return 0.5
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -71,36 +71,5 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
         self.destination.destinationTransitionWillStart()
         
         animator.startAnimation()
-    }
-    
-    
-}
-
-
-protocol AnimojiViewContainer: class {
-    
-    func getSourceFrame() -> CGRect
-    func getDestinationFrame() -> CGRect
-    
-    func sourceTransitionWillStart()
-    func sourceTransitionDidEnd()
-    
-    func destinationTransitionWillStart()
-    func destinationTransitionDidEnd()
-    
-    func getParentView() -> UIView
-    
-    func onAnimojiViewTapped()
-}
-
-extension CGSize {
-    static func > (_ a: CGSize, _ b: CGSize) -> Bool {
-        return a.width * a.height > b.width * b.height
-    }
-}
-
-extension CGRect {
-    var center: CGPoint {
-        return CGPoint(x: midX, y: midY)
     }
 }

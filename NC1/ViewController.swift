@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AnimojiViewContainer {
     
     @IBOutlet weak var story1View: UIImageView!
     @IBOutlet weak var story2View: UIImageView!
@@ -187,9 +187,8 @@ class ViewController: UIViewController {
         // TODO: - Add story to view controller
     }
 
-}
-
-extension ViewController: AnimojiViewContainer {
+    // MARK: - AnimojiViewContainer
+    
     func onAnimojiViewTapped() {
         //
     }

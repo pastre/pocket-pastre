@@ -8,12 +8,12 @@
 
 import UIKit
 
-class StoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class StoryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, AnimojiViewContainer {
 
     @IBOutlet weak var storiesCollectionView: UICollectionView!
-    
     @IBOutlet weak var animojiParentView: UIView!
     @IBOutlet weak var animojiView: AnimojiViewFrame!
+    
     var story: Story!
     
     override func viewDidLoad() {
@@ -33,12 +33,6 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         self.animojiView.addGestureRecognizer(tapGesture)
         
-    }
-    
-    
-
-    @objc func onTap() {
-        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -81,11 +75,8 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
         return -90
     }
     
-}
-
-
-
-extension StoryViewController: AnimojiViewContainer {
+    // MARK: - AnimojiViewContainer
+    
     func onAnimojiViewTapped() {
          self.onTap()
     }
@@ -118,6 +109,14 @@ extension StoryViewController: AnimojiViewContainer {
     
     func destinationTransitionDidEnd() {
         // TODO
+    }
+    
+    
+    // MARK: - Callbacks
+    
+    
+    @objc func onTap() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     

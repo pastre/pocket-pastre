@@ -27,3 +27,17 @@ extension UIImage {
         return img
     }
 }
+
+
+extension CGSize {
+    static func > (_ a: CGSize, _ b: CGSize) -> Bool {
+        return a.width * a.height > b.width * b.height
+    }
+}
+
+extension CGRect {
+    var center: CGPoint {
+        return CGPoint(x: midX, y: midY)
+    }
+}
+
