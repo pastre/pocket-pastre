@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol MilestoneTransitionAnimatorDelegate: class {
+protocol MilestoneTransitionAnimatorDelegate1: class {
     func transitionWillStart()
     func transitionDidEnd()
     
     func frame() -> CGRect?
     
-    func transitionAnimojiView() -> AnimojiView
+    func transitionAnimojiView() -> AnimojiViewFrame
 }

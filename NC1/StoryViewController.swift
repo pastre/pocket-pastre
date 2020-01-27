@@ -12,7 +12,7 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
 
     @IBOutlet weak var storiesCollectionView: UICollectionView!
     
-    @IBOutlet weak var animojiView: AnimojiView!
+    @IBOutlet weak var animojiView: AnimojiViewFrame!
     var story: Story!
     
     override func viewDidLoad() {
@@ -84,24 +84,30 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
 
 
 
-extension StoryViewController: MilestoneTransitionAnimatorDelegate {
-    func frame() -> CGRect? {
-        
-        self.animojiView.frame
+extension StoryViewController: AnimojiViewContainer {
+    func getSourceFrame() -> CGRect {
+        return self.animojiView.frame
     }
     
-    func transitionAnimojiView() -> AnimojiView {
-    
-        return self.animojiView
+    func getDestinationFrame() -> CGRect {
+        return self.animojiView.frame
     }
     
-    func transitionWillStart() {
-        self.animojiView.isHidden = true
+    func sourceTransitionWillStart() {
+        // TODO
     }
-
-    func transitionDidEnd() {
-        self.animojiView.isHidden = false
+    
+    func sourceTransitionDidEnd() {
+        // TODO
     }
-
+    
+    func destinationTransitionWillStart() {
+        // TODO
+    }
+    
+    func destinationTransitionDidEnd() {
+        // TODO
+    }
+    
     
 }

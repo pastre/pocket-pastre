@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var winkyImageView: UIImageView!
     
-    @IBOutlet weak var animojiView: AnimojiView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -187,24 +186,31 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: MilestoneTransitionAnimatorDelegate {
-    func frame() -> CGRect? {
-        return self.animojiView.frame
+extension ViewController: AnimojiViewContainer {
+    func getSourceFrame() -> CGRect {
+        return self.winkyImageView.frame
     }
     
-    func transitionAnimojiView() -> AnimojiView {
-        
-        return self.animojiView
+    func getDestinationFrame() -> CGRect {
+        return self.winkyImageView.frame
     }
     
-    func transitionWillStart() {
-        print("Ta comecaaando na VC")
+    func sourceTransitionWillStart() {
+        // TODO
     }
-
-    func transitionDidEnd() {
-        
-        print("Acabou na VC")
+    
+    func sourceTransitionDidEnd() {
+        // TODO
     }
-
+    
+    func destinationTransitionWillStart() {
+        // TODO
+    }
+    
+    func destinationTransitionDidEnd() {
+        // TODO
+    }
+    
+    
     
 }

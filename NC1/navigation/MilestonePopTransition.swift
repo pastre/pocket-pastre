@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MilestonePopTransition: MilestoneTransition {
+class MilestonePopTransition: MilestoneTransition1 {
     
     override func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 5

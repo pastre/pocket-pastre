@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MilestonePushTransition: MilestoneTransition {
+class MilestonePushTransition: MilestoneTransition1 {
     
     override func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         

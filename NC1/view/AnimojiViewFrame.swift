@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+class AnimojiViewFrame: UIView {
+    
+}
+
 class AnimojiView: UIView {
     
 }

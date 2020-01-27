@@ -23,13 +23,18 @@ class NavigationController: UINavigationController, UINavigationControllerDelega
         
         var result: UIViewControllerAnimatedTransitioning?
         
-        if let milestoneVc = toVC as? StoryViewController, operation == .push {
-            result = MilestonePushTransition(fromDelegate: fromVC, toStoryDetailVc: milestoneVc)
-        } else if let storiesVc = toVC as? ViewController, operation == .pop {
-            result = MilestonePopTransition(fromDelegate: fromVC, toStoryDetailVc: storiesVc)
+        if let from = fromVC as? AnimojiViewContainer, let to = toVC as? AnimojiViewContainer {
+            
+            let transition = MilestoneTransition(source: from, destination: to)
+            transition.shouldFlip = operation == .pop
+            
+            result = transition
         }
         
+        
+        
         self.currentAnimationTransition = result
+        
         return result
     }
 
