@@ -15,6 +15,7 @@ class AnimatedGradientBorderView: UIView {
     var hasSetup = false
     
     @IBInspectable var isCircular: Bool = false
+    @IBInspectable var lineWidth: CGFloat = 10
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -39,7 +40,7 @@ class AnimatedGradientBorderView: UIView {
                 
         let shape = CAShapeLayer()
         
-        shape.lineWidth = 4
+        shape.lineWidth = self.lineWidth
     
         shape.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius).cgPath
         

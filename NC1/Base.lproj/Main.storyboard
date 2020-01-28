@@ -34,7 +34,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYW-CQ-BJ3" customClass="BackgroundView" customModule="NC1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6M7-QU-Tqg">
                                 <rect key="frame" x="0.0" y="593" width="414" height="269"/>
@@ -166,110 +166,128 @@
                                 <rect key="frame" x="20" y="123" width="118" height="118"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="academyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mrF-98-vge">
-                                        <rect key="frame" x="12" y="12" width="94" height="94"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="118"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="mrF-98-vge" firstAttribute="width" secondItem="AWi-fr-Eho" secondAttribute="width" multiplier="0.8" id="Cep-in-LtA"/>
+                                    <constraint firstItem="mrF-98-vge" firstAttribute="width" secondItem="AWi-fr-Eho" secondAttribute="width" id="Cep-in-LtA"/>
                                     <constraint firstItem="mrF-98-vge" firstAttribute="centerY" secondItem="AWi-fr-Eho" secondAttribute="centerY" id="Yf7-z0-yL9"/>
                                     <constraint firstItem="mrF-98-vge" firstAttribute="centerX" secondItem="AWi-fr-Eho" secondAttribute="centerX" id="geg-wG-4tv"/>
-                                    <constraint firstItem="mrF-98-vge" firstAttribute="height" secondItem="AWi-fr-Eho" secondAttribute="height" multiplier="0.8" id="lg5-NF-dxj"/>
+                                    <constraint firstItem="mrF-98-vge" firstAttribute="height" secondItem="AWi-fr-Eho" secondAttribute="height" id="lg5-NF-dxj"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isCircular" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEP-41-mLV" customClass="AnimatedGradientBorderView" customModule="NC1" customModuleProvider="target">
                                 <rect key="frame" x="148" y="64" width="118" height="118"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aiIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DuT-dN-6vb">
-                                        <rect key="frame" x="12" y="12" width="94" height="94"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="118"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nEP-41-mLV" secondAttribute="height" multiplier="1:1" id="1px-VZ-ZRc"/>
                                     <constraint firstItem="DuT-dN-6vb" firstAttribute="centerX" secondItem="nEP-41-mLV" secondAttribute="centerX" id="4x6-6z-HuQ"/>
-                                    <constraint firstItem="DuT-dN-6vb" firstAttribute="height" secondItem="nEP-41-mLV" secondAttribute="height" multiplier="0.8" id="ROk-kz-8ad"/>
-                                    <constraint firstItem="DuT-dN-6vb" firstAttribute="width" secondItem="nEP-41-mLV" secondAttribute="width" multiplier="0.8" id="bq5-Dl-qw8"/>
+                                    <constraint firstItem="DuT-dN-6vb" firstAttribute="height" secondItem="nEP-41-mLV" secondAttribute="height" id="ROk-kz-8ad"/>
+                                    <constraint firstItem="DuT-dN-6vb" firstAttribute="width" secondItem="nEP-41-mLV" secondAttribute="width" id="bq5-Dl-qw8"/>
                                     <constraint firstItem="DuT-dN-6vb" firstAttribute="centerY" secondItem="nEP-41-mLV" secondAttribute="centerY" id="sh5-wV-N9r"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isCircular" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzh-sf-Dcg" customClass="AnimatedGradientBorderView" customModule="NC1" customModuleProvider="target">
                                 <rect key="frame" x="276" y="123" width="118" height="118"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0u9-ay-cFP">
-                                        <rect key="frame" x="12" y="12" width="94" height="94"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="118"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="0u9-ay-cFP" firstAttribute="height" secondItem="pzh-sf-Dcg" secondAttribute="height" multiplier="0.8" id="3g9-N6-dwx"/>
+                                    <constraint firstItem="0u9-ay-cFP" firstAttribute="height" secondItem="pzh-sf-Dcg" secondAttribute="height" id="3g9-N6-dwx"/>
                                     <constraint firstItem="0u9-ay-cFP" firstAttribute="centerX" secondItem="pzh-sf-Dcg" secondAttribute="centerX" id="3hf-z5-eP8"/>
                                     <constraint firstItem="0u9-ay-cFP" firstAttribute="centerY" secondItem="pzh-sf-Dcg" secondAttribute="centerY" id="Epa-Er-gXf"/>
-                                    <constraint firstItem="0u9-ay-cFP" firstAttribute="width" secondItem="pzh-sf-Dcg" secondAttribute="width" multiplier="0.8" id="vac-pJ-psd"/>
+                                    <constraint firstItem="0u9-ay-cFP" firstAttribute="width" secondItem="pzh-sf-Dcg" secondAttribute="width" id="vac-pJ-psd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isCircular" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bv-MG-okG" customClass="AnimatedGradientBorderView" customModule="NC1" customModuleProvider="target">
                                 <rect key="frame" x="148" y="744" width="118" height="118"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guitarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="v3a-4H-CpW">
-                                        <rect key="frame" x="12" y="12" width="94" height="94"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="118"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="v3a-4H-CpW" firstAttribute="width" secondItem="4bv-MG-okG" secondAttribute="width" multiplier="0.8" id="5Yw-Ue-Tyg"/>
+                                    <constraint firstItem="v3a-4H-CpW" firstAttribute="width" secondItem="4bv-MG-okG" secondAttribute="width" id="5Yw-Ue-Tyg"/>
                                     <constraint firstItem="v3a-4H-CpW" firstAttribute="centerX" secondItem="4bv-MG-okG" secondAttribute="centerX" id="BSy-qb-j9z"/>
-                                    <constraint firstItem="v3a-4H-CpW" firstAttribute="height" secondItem="4bv-MG-okG" secondAttribute="height" multiplier="0.8" id="iuA-ws-TqS"/>
+                                    <constraint firstItem="v3a-4H-CpW" firstAttribute="height" secondItem="4bv-MG-okG" secondAttribute="height" id="iuA-ws-TqS"/>
                                     <constraint firstItem="v3a-4H-CpW" firstAttribute="centerY" secondItem="4bv-MG-okG" secondAttribute="centerY" id="jqL-6S-O5o"/>
                                     <constraint firstAttribute="width" secondItem="4bv-MG-okG" secondAttribute="height" id="zno-Qj-w3u"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isCircular" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3e-60-MJL" customClass="AnimatedGradientBorderView" customModule="NC1" customModuleProvider="target">
                                 <rect key="frame" x="276" y="685" width="118" height="118"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="readingIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dyZ-Io-cON">
-                                        <rect key="frame" x="12" y="12" width="94" height="94"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="118"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="dyZ-Io-cON" firstAttribute="centerY" secondItem="y3e-60-MJL" secondAttribute="centerY" id="WUs-0w-EKJ"/>
                                     <constraint firstItem="dyZ-Io-cON" firstAttribute="centerX" secondItem="y3e-60-MJL" secondAttribute="centerX" id="XYG-PO-god"/>
-                                    <constraint firstItem="dyZ-Io-cON" firstAttribute="width" secondItem="y3e-60-MJL" secondAttribute="width" multiplier="0.8" id="bc7-bo-52u"/>
-                                    <constraint firstItem="dyZ-Io-cON" firstAttribute="height" secondItem="y3e-60-MJL" secondAttribute="height" multiplier="0.8" id="fJY-Wp-90f"/>
+                                    <constraint firstItem="dyZ-Io-cON" firstAttribute="width" secondItem="y3e-60-MJL" secondAttribute="width" id="bc7-bo-52u"/>
+                                    <constraint firstItem="dyZ-Io-cON" firstAttribute="height" secondItem="y3e-60-MJL" secondAttribute="height" id="fJY-Wp-90f"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isCircular" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEC-k2-SdM" customClass="AnimatedGradientBorderView" customModule="NC1" customModuleProvider="target">
                                 <rect key="frame" x="20" y="685" width="118" height="118"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hobbyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4r5-Cd-4SJ">
-                                        <rect key="frame" x="12" y="12" width="94" height="94"/>
+                                        <rect key="frame" x="-6" y="0.0" width="130" height="118"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="4r5-Cd-4SJ" firstAttribute="width" secondItem="YEC-k2-SdM" secondAttribute="width" multiplier="0.8" id="9cm-9B-PlT"/>
-                                    <constraint firstItem="4r5-Cd-4SJ" firstAttribute="height" secondItem="YEC-k2-SdM" secondAttribute="height" multiplier="0.8" id="PBj-me-xfc"/>
+                                    <constraint firstItem="4r5-Cd-4SJ" firstAttribute="width" secondItem="YEC-k2-SdM" secondAttribute="width" multiplier="1.1" id="9cm-9B-PlT"/>
+                                    <constraint firstItem="4r5-Cd-4SJ" firstAttribute="height" secondItem="YEC-k2-SdM" secondAttribute="height" id="PBj-me-xfc"/>
                                     <constraint firstItem="4r5-Cd-4SJ" firstAttribute="centerY" secondItem="YEC-k2-SdM" secondAttribute="centerY" id="SU9-tv-yMm"/>
                                     <constraint firstItem="4r5-Cd-4SJ" firstAttribute="centerX" secondItem="YEC-k2-SdM" secondAttribute="centerX" id="zqG-2N-odf"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isCircular" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HSE-NQ-pJI">
@@ -337,12 +355,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="academyIcon" width="64" height="64"/>
-        <image name="aiIcon" width="64" height="64"/>
-        <image name="guitarIcon" width="64" height="64"/>
-        <image name="hobbyIcon" width="64" height="64"/>
-        <image name="personalIcon" width="64" height="64"/>
-        <image name="readingIcon" width="64" height="64"/>
+        <image name="academyIcon" width="115" height="113"/>
+        <image name="aiIcon" width="115" height="113"/>
+        <image name="guitarIcon" width="115" height="113"/>
+        <image name="hobbyIcon" width="115" height="113"/>
+        <image name="personalIcon" width="115" height="113"/>
+        <image name="readingIcon" width="115" height="113"/>
         <image name="storyBorder" width="374" height="434"/>
         <image name="storyDeselected" width="119" height="119"/>
     </resources>

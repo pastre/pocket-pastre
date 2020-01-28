@@ -42,7 +42,7 @@ class AnimojiViewManager {
     
     func configure(on view: AnimojiViewContainer) {
         
-        var frame = view.getDestinationFrame()
+        let frame = view.getDestinationFrame()
         
         view.getParentView().addSubview(self.view)
         

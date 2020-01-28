@@ -76,7 +76,7 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+//        return 100
         return self.story.milestones.count
         
     }
