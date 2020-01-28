@@ -1,31 +1,23 @@
 //
-//  AnimatedGradientBorderView.swift
+//  AnimatedGradientImageView.swift
 //  NC1
 //
-//  Created by Bruno Pastre on 24/01/20.
+//  Created by Bruno Pastre on 28/01/20.
 //  Copyright © 2020 Bruno Pastre. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-@IBDesignable
-class AnimatedGradientBorderView: UIView {
-
-    var hasSetup = false
+class AnimatedGradientImageView: UIImageView {
     
-    @IBInspectable var isCircular: Bool = false
+    var hasSetup = false
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-//        if hasSetup { return }
-//        self.hasSetup = true
+        if hasSetup { return }
+        self.hasSetup = true
         self.clipsToBounds = true
-        
-        let cornerRadius = self.isCircular ? rect.width / 2 : 20
-        
-        self.layer.cornerRadius = cornerRadius
         
         let border = CAGradientLayer(layer: self.layer)
         
@@ -41,7 +33,7 @@ class AnimatedGradientBorderView: UIView {
         
         shape.lineWidth = 4
     
-        shape.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius).cgPath
+        shape.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: 20).cgPath
         
         shape.strokeColor = UIColor.black.cgColor
         shape.fillColor = UIColor.clear.cgColor

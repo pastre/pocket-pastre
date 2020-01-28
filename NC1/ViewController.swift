@@ -11,12 +11,12 @@ import SpriteKit
 
 class ViewController: UIViewController, AnimojiViewContainer {
    
-    @IBOutlet weak var story1View: UIImageView!
-    @IBOutlet weak var story2View: UIImageView!
-    @IBOutlet weak var story3View: UIImageView!
-    @IBOutlet weak var story4View: UIImageView!
-    @IBOutlet weak var story5View: UIImageView!
-    @IBOutlet weak var story6View: UIImageView!
+    @IBOutlet weak var story1View: UIView!
+    @IBOutlet weak var story2View: UIView!
+    @IBOutlet weak var story3View: UIView!
+    @IBOutlet weak var story4View: UIView!
+    @IBOutlet weak var story5View: UIView!
+    @IBOutlet weak var story6View: UIView!
     
     @IBOutlet weak var animojiView: UIView!
     
@@ -56,8 +56,13 @@ class ViewController: UIViewController, AnimojiViewContainer {
     // MARK: - Setup functions
     
     func setupButtons() {
-        self.getButtons().forEach {
-            $0.transform = $0.transform.scaledBy(x: 0.001, y: 0.001)
+        for (i, button) in self.getButtons().enumerated() {
+//            if let story = Manager.instance.getStory(at: i), let icon = story.getIcon() {
+//                
+//            }
+//           
+            
+            button.transform = button.transform.scaledBy(x: 0.001, y: 0.001)
         }
     }
     

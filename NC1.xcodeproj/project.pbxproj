@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D74BB93823E0647500EF8203 /* AnimatedGradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74BB93723E0647500EF8203 /* AnimatedGradientImageView.swift */; };
 		D74BDA4B23DF32F500D8DF53 /* AnimojiViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74BDA4A23DF32F500D8DF53 /* AnimojiViewManager.swift */; };
 		D74BDA4D23DF3EC700D8DF53 /* AnimojiViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74BDA4C23DF3EC700D8DF53 /* AnimojiViewContainer.swift */; };
 		D7C14C0523D8D05D00ECAC83 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C14C0423D8D05D00ECAC83 /* StoryViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D74BB93723E0647500EF8203 /* AnimatedGradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientImageView.swift; sourceTree = "<group>"; };
 		D74BDA4A23DF32F500D8DF53 /* AnimojiViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimojiViewManager.swift; sourceTree = "<group>"; };
 		D74BDA4C23DF3EC700D8DF53 /* AnimojiViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimojiViewContainer.swift; sourceTree = "<group>"; };
 		D7C14C0423D8D05D00ECAC83 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				D7C14C0623DA3BAF00ECAC83 /* BackgroundView.swift */,
 				D7C14C1023DB3B7600ECAC83 /* AnimatedGradientBorderView.swift */,
 				D7C14C2223DB7A0A00ECAC83 /* AnimojiViewFrame.swift */,
+				D74BB93723E0647500EF8203 /* AnimatedGradientImageView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				D7C14C1123DB3B7600ECAC83 /* AnimatedGradientBorderView.swift in Sources */,
 				D7FFA64B23D7878D00A2268A /* ViewController.swift in Sources */,
 				D7C14C0723DA3BAF00ECAC83 /* BackgroundView.swift in Sources */,
+				D74BB93823E0647500EF8203 /* AnimatedGradientImageView.swift in Sources */,
 				D74BDA4D23DF3EC700D8DF53 /* AnimojiViewContainer.swift in Sources */,
 				D7C14C1D23DB732700ECAC83 /* NavigationController.swift in Sources */,
 				D7FFA64723D7878D00A2268A /* AppDelegate.swift in Sources */,

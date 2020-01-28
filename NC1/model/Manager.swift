@@ -6,7 +6,7 @@
 //  Copyright © 2020 Bruno Pastre. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Manager  {
     
@@ -15,7 +15,14 @@ class Manager  {
     var stories: [Story]!
     
     private init() {
-        self.stories = []
+        self.stories = [
+        Story(name: "Apple Developer Academy", milestones: nil, iconName: "academyIcon"),
+        Story(name: "AI", milestones: nil, iconName: "aiIcon"),
+        Story(name: "Personal Projects", milestones: nil, iconName: "personalIcon"),
+        Story(name: "Music", milestones: nil, iconName: "guitarIcon"),
+        Story(name: "Hobbies", milestones: nil, iconName: "hobbyIcon"),
+        Story(name: "Readings", milestones: nil, iconName: "readingIcon"),
+        ]
     }
     
     func getStory(at index: Int) -> Story? {
@@ -24,4 +31,5 @@ class Manager  {
         
         return self.stories[index]
     }
+    
 }

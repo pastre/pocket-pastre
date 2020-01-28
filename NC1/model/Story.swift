@@ -6,7 +6,7 @@
 //  Copyright © 2020 Bruno Pastre. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Story {
     
@@ -22,4 +22,7 @@ class Story {
     var iconName: String!
     
     
+    func getIcon() -> UIImage? {
+        return UIImage(named: self.iconName)
+    }
 }
