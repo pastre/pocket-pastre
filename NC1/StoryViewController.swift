@@ -17,6 +17,8 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     var story: Story!
     
+    var currentSelectedItem: IndexPath?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,7 +65,6 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func presentContentView() {
         UIView.animate(withDuration: 0.5) {
-            
             self.contentContainerView.transform = .identity
         }
     }
@@ -76,22 +77,53 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 100
+//        return 4
         return self.story.milestones.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyDeselected", for: indexPath)
-//        let milestone = self.story.milestones[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyDeselected", for: indexPath) as! MilestoneCollectionViewCell
         
         cell.transform = cell.transform.scaledBy(x: 0.001, y: 0.001)
-        
-        UIView.animate(withDuration: 0.5) {
-            cell.transform = .identity
+        if indexPath.item < self.story.milestones.count {
+
+            let milestone = self.story.milestones[indexPath.item]
+            
+            cell.iconImageView.image = indexPath != self.currentSelectedItem ? milestone.getDeselectedIcon() : milestone.getSelectedIcon()
+            
+            UIView.animate(withDuration: 0.5) {
+                cell.transform = .identity
+            }
         }
         
+        
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Selecionou")
+        if indexPath == self.currentSelectedItem { return }
+        
+        
+        
+        if let prevSelectedItem = self.currentSelectedItem {
+
+            self.currentSelectedItem = indexPath
+            self.storiesCollectionView.reloadItems(at: [ prevSelectedItem, indexPath])
+            
+            return
+        }
+
+        self.currentSelectedItem = indexPath
+        self.storiesCollectionView.reloadItems(at: [ indexPath])
+        
+        
+        
+        
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -99,14 +131,14 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
         return CGSize(width: size, height: size)
     }
     
-    func collectionView(_ collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
-        return CGPoint(x: 100, y: 100)
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return -90
-    }
+//    func collectionView(_ collectionView: UICollectionView, targetContentOffsetForProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
+//        return CGPoint(x: 100, y: 100)
+//    }
+//
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return -90
+//    }
     
     // MARK: - AnimojiViewContainer
     

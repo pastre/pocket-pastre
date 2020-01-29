@@ -28,20 +28,18 @@ class MilestoneLayout: UICollectionViewFlowLayout {
     override func prepare() {
         guard let collectionView = self.collectionView else { return }
       
-        let columnWidth = collectionView.frame.width * 0.35
+        let columnWidth = (collectionView.frame.width * 0.35) - 20
         let height: CGFloat = columnWidth
         
-        let collectionHeight = collectionView.frame.height
-        
-        var col = 0
-        var yOffset: [CGFloat] = [CGFloat].init(repeating: 0, count: Int(nColumns))
+        let collectionHeight = collectionView.bounds.height
         
         
         for item in 0..<collectionView.numberOfItems(inSection: 0) {
             let indexPath = IndexPath(item: item, section: 0)
             let xOffset = CGFloat(item) * columnWidth
+            let yOffset = collectionHeight * 0.1
             
-            let frame = CGRect(x: 20 + xOffset, y: item % 2 == 0 ? 10 : collectionHeight - height - 10, width: columnWidth, height: height)
+            let frame = CGRect(x: 20 + xOffset, y: item % 2 == 0 ? yOffset : collectionHeight - height - yOffset, width: columnWidth, height: height)
             
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
             
@@ -51,11 +49,7 @@ class MilestoneLayout: UICollectionViewFlowLayout {
             attributes.frame = insetFrame
             
             cache.append(attributes)
-            
 
-            yOffset[col] = yOffset[col] + height
-
-            col = col < Int((nColumns - 1)) ? (col + 1) : 0
 
         }
         

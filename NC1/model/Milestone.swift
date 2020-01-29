@@ -6,7 +6,7 @@
 //  Copyright © 2020 Bruno Pastre. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Milestone {
     internal init(name: String?, description: String?, iconName: String?) {
@@ -19,6 +19,14 @@ class Milestone {
     var name: String!
     var description: String!
     var iconName: String!
+    
+    func getSelectedIcon() -> UIImage? {
+        return UIImage(named: (self.iconName) + "Selected")
+    }
+    
+    func getDeselectedIcon() -> UIImage? {
+        return UIImage(named: (self.iconName) + "Deselected")
+    }
     
     
 }

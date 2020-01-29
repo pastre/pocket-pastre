@@ -36,10 +36,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6M7-QU-Tqg">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6M7-QU-Tqg">
                                 <rect key="frame" x="0.0" y="593" width="414" height="269"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewLayout key="collectionViewLayout" id="KUC-j1-xfl" customClass="MilestoneLayout" customModule="NC1" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="jQK-fH-YRe" customClass="MilestoneLayout" customModule="NC1" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="storyDeselected" id="H5r-XZ-uyv" customClass="MilestoneCollectionViewCell" customModule="NC1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="128"/>
@@ -48,7 +48,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storyDeselected" translatesAutoresizingMaskIntoConstraints="NO" id="2f5-QV-BwI">
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storyDeselected" translatesAutoresizingMaskIntoConstraints="NO" id="2f5-QV-BwI">
                                                     <rect key="frame" x="0.0" y="0.0" width="125" height="128"/>
                                                 </imageView>
                                             </subviews>
@@ -60,6 +60,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="125" height="128"/>
+                                        <connections>
+                                            <outlet property="iconImageView" destination="2f5-QV-BwI" id="LZ4-xd-Nm2"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
