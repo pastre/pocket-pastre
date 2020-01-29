@@ -21,6 +21,10 @@ class Manager  {
                 Milestone(name: "Harmonify - Colors & Palettes", description: "TODO", iconName: "harmonify"),
                 Milestone(name: ".space", description: "TODO", iconName: "dotspace"),
                 Milestone(name: "Movie Genie", description: "TODO", iconName: "movieGenie"),
+                Milestone(name: "Playing with PC", description: "TODO", iconName: "quiz"),
+                Milestone(name: "Activities Manager", description: "TODO", iconName: "activities"),
+                Milestone(name: "Relibox", description: "TODO", iconName: "relibox"),
+                Milestone(name: "Cube H", description: "TODO", iconName: "cubeH"),
                                    
                 ],
                   

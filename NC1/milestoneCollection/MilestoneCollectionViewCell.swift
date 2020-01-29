@@ -12,5 +12,14 @@ class MilestoneCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var iconImageView: UIImageView!
     
+    var currentBorder: UIImageView?
+    
+    func configureBorder() {
+        // TODO
+    }
+    
+    func deanimateBorder() {
+        // TODO
+    }
     
 }

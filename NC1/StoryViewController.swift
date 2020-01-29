@@ -15,6 +15,9 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var animojiParentView: UIView!
     @IBOutlet weak var animojiView: AnimojiViewFrame!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
     var story: Story!
     
     var currentSelectedItem: IndexPath?
@@ -68,6 +71,18 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
             self.contentContainerView.transform = .identity
         }
     }
+    
+    // MARK: - Data methods
+    
+    func updateData() {
+        if let item = self.currentSelectedItem {
+
+            let milestone = self.story.milestones[item.item]
+            
+            self.titleLabel.text = milestone.name
+            self.descriptionTextView.text = milestone.description
+        }
+    }
 
     
     // MARK: - CollectionView methods
@@ -86,27 +101,33 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyDeselected", for: indexPath) as! MilestoneCollectionViewCell
         
         cell.transform = cell.transform.scaledBy(x: 0.001, y: 0.001)
-        if indexPath.item < self.story.milestones.count {
+      
+        let milestone = self.story.milestones[indexPath.item]
+        
+        if indexPath == self.currentSelectedItem {
+            cell.iconImageView.image = milestone.getSelectedIcon()
+            cell.configureBorder()
+            
+            cell.currentBorder?.animateRotation(duration: 1, repeat: true, completion: nil)
 
-            let milestone = self.story.milestones[indexPath.item]
-            
-            cell.iconImageView.image = indexPath != self.currentSelectedItem ? milestone.getDeselectedIcon() : milestone.getSelectedIcon()
-            
-            UIView.animate(withDuration: 0.5) {
-                cell.transform = .identity
-            }
+        } else {
+            cell.iconImageView.image = milestone.getDeselectedIcon()
+            cell.deanimateBorder()
         }
         
-        
+        UIView.animate(withDuration: 0.5) {
+            cell.transform = .identity
+        }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Selecionou")
+        
         if indexPath == self.currentSelectedItem { return }
-        
-        
+    
+        defer { self.updateData() }
         
         if let prevSelectedItem = self.currentSelectedItem {
 
@@ -118,10 +139,6 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
 
         self.currentSelectedItem = indexPath
         self.storiesCollectionView.reloadItems(at: [ indexPath])
-        
-        
-        
-        
         
         
     }
