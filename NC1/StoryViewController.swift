@@ -50,6 +50,7 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         self.presentContentView()
 
+        self.storiesCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -139,7 +140,6 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
 
         self.currentSelectedItem = indexPath
         self.storiesCollectionView.reloadItems(at: [ indexPath])
-        
         
     }
     

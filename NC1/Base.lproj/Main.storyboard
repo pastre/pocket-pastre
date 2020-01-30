@@ -73,7 +73,7 @@
                                         <rect key="frame" x="20" y="61" width="374" height="458"/>
                                         <subviews>
                                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storyBorder" translatesAutoresizingMaskIntoConstraints="NO" id="pii-R7-4fl">
-                                                <rect key="frame" x="0.0" y="0.0" width="374.00000000000006" height="458"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="458"/>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dfN-nM-AAH">
                                                 <rect key="frame" x="10" y="20" width="344" height="418"/>
@@ -188,7 +188,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEP-41-mLV" customClass="AnimatedGradientBorderView" customModule="NC1" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEP-41-mLV" customClass="AnimatedGradientBorderView" customModule="NC1" customModuleProvider="target">
                                 <rect key="frame" x="148" y="64" width="118" height="118"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aiIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DuT-dN-6vb">
@@ -213,7 +213,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzh-sf-Dcg" customClass="AnimatedGradientBorderView" customModule="NC1" customModuleProvider="target">
                                 <rect key="frame" x="276" y="123" width="118" height="118"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0u9-ay-cFP">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aiIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0u9-ay-cFP">
                                         <rect key="frame" x="0.0" y="0.0" width="118" height="118"/>
                                     </imageView>
                                 </subviews>
@@ -231,7 +231,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bv-MG-okG" customClass="AnimatedGradientBorderView" customModule="NC1" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bv-MG-okG" customClass="AnimatedGradientBorderView" customModule="NC1" customModuleProvider="target">
                                 <rect key="frame" x="148" y="744" width="118" height="118"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guitarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="v3a-4H-CpW">
@@ -256,7 +256,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3e-60-MJL" customClass="AnimatedGradientBorderView" customModule="NC1" customModuleProvider="target">
                                 <rect key="frame" x="276" y="685" width="118" height="118"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="readingIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dyZ-Io-cON">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dyZ-Io-cON">
                                         <rect key="frame" x="0.0" y="0.0" width="118" height="118"/>
                                     </imageView>
                                 </subviews>
@@ -365,7 +365,6 @@
         <image name="guitarIcon" width="115" height="113"/>
         <image name="hobbyIcon" width="115" height="113"/>
         <image name="personalIcon" width="115" height="113"/>
-        <image name="readingIcon" width="115" height="113"/>
         <image name="storyBorder" width="374" height="434"/>
         <image name="storyDeselected" width="119" height="119"/>
     </resources>

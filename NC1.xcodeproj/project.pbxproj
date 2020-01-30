@@ -45,7 +45,7 @@
 		D7C14C1C23DB732700ECAC83 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D7C14C2223DB7A0A00ECAC83 /* AnimojiViewFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimojiViewFrame.swift; sourceTree = "<group>"; };
 		D7C14C2823DC85D100ECAC83 /* MilestoneTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneTransition.swift; sourceTree = "<group>"; };
-		D7FFA64323D7878D00A2268A /* NC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NC1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7FFA64323D7878D00A2268A /* Pocket Pastre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Pastre.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FFA64623D7878D00A2268A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7FFA64823D7878D00A2268A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D7FFA64A23D7878D00A2268A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		D7FFA64423D7878D00A2268A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D7FFA64323D7878D00A2268A /* NC1.app */,
+				D7FFA64323D7878D00A2268A /* Pocket Pastre.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,7 +161,7 @@
 			);
 			name = NC1;
 			productName = NC1;
-			productReference = D7FFA64323D7878D00A2268A /* NC1.app */;
+			productReference = D7FFA64323D7878D00A2268A /* Pocket Pastre.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -384,7 +384,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pastre.github.io.NC1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pocket Pastre";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -402,7 +402,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pastre.github.io.NC1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Pocket Pastre";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

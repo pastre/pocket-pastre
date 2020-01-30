@@ -189,10 +189,10 @@ class ViewController: UIViewController, AnimojiViewContainer {
     func getButtons() -> [UIView] {
         return [
             self.story1View,
-            self.story2View,
+//            self.story2View,
             self.story3View,
             self.story4View,
-            self.story5View,
+//            self.story5View,
             self.story6View,
         ]
     }
