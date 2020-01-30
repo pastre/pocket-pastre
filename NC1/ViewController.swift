@@ -48,6 +48,7 @@ class ViewController: UIViewController, AnimojiViewContainer {
         super.viewDidAppear(animated)
         self.configureButtons()
         
+        AnimojiViewManager.instance.startAnimation()
         
     }
 

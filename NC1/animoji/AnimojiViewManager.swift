@@ -23,6 +23,7 @@ class AnimojiViewManager {
     }()
     
     var delegate: AnimojiViewContainer?
+    private let videoManager: VideoManager = VideoManager()
     
     private init() {
         
@@ -36,7 +37,7 @@ class AnimojiViewManager {
         self.delegate?.onAnimojiViewTapped()
     }
     
-    func getAnimojiView() -> UIView {
+    func getAnimojiView() -> AnimojiView {
         return self.view
     }
     
@@ -53,5 +54,9 @@ class AnimojiViewManager {
         
         print("Configured animoji view on", view)
         
+    }
+    
+    func startAnimation() {
+        self.videoManager.setup()
     }
 }

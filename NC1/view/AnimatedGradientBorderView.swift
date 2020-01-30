@@ -22,13 +22,10 @@ class AnimatedGradientBorderView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-//        if hasSetup { return }
-//        self.hasSetup = true
-        
         if let border = self.currentBorder {
-
             border.removeFromSuperlayer()
         }
+
         self.clipsToBounds = true
         
         let cornerRadius = self.isCircular ? rect.width / 2 : 20

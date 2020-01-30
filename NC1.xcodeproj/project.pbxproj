@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7242A2523E35CB200DADC76 /* wanderUp.mov in Resources */ = {isa = PBXBuildFile; fileRef = D7242A2023E35CB100DADC76 /* wanderUp.mov */; };
+		D7242A2623E35CB200DADC76 /* smile.mov in Resources */ = {isa = PBXBuildFile; fileRef = D7242A2123E35CB100DADC76 /* smile.mov */; };
+		D7242A2723E35CB200DADC76 /* wanderRight.mov in Resources */ = {isa = PBXBuildFile; fileRef = D7242A2223E35CB100DADC76 /* wanderRight.mov */; };
+		D7242A2823E35CB200DADC76 /* blink.mov in Resources */ = {isa = PBXBuildFile; fileRef = D7242A2323E35CB200DADC76 /* blink.mov */; };
+		D7242A2923E35CB200DADC76 /* wander.mov in Resources */ = {isa = PBXBuildFile; fileRef = D7242A2423E35CB200DADC76 /* wander.mov */; };
+		D7242A2B23E35CC500DADC76 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7242A2A23E35CC500DADC76 /* Expression.swift */; };
+		D7242A2D23E35CDB00DADC76 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7242A2C23E35CDB00DADC76 /* VideoManager.swift */; };
+		D7242A2F23E35D6100DADC76 /* AnimojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7242A2E23E35D6100DADC76 /* AnimojiView.swift */; };
+		D7242A3123E3650800DADC76 /* idle.mov in Resources */ = {isa = PBXBuildFile; fileRef = D7242A3023E3650800DADC76 /* idle.mov */; };
 		D74BB93823E0647500EF8203 /* AnimatedGradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74BB93723E0647500EF8203 /* AnimatedGradientImageView.swift */; };
 		D74BDA4B23DF32F500D8DF53 /* AnimojiViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74BDA4A23DF32F500D8DF53 /* AnimojiViewManager.swift */; };
 		D74BDA4D23DF3EC700D8DF53 /* AnimojiViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74BDA4C23DF3EC700D8DF53 /* AnimojiViewContainer.swift */; };
@@ -31,6 +40,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D7242A2023E35CB100DADC76 /* wanderUp.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = wanderUp.mov; sourceTree = "<group>"; };
+		D7242A2123E35CB100DADC76 /* smile.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = smile.mov; sourceTree = "<group>"; };
+		D7242A2223E35CB100DADC76 /* wanderRight.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = wanderRight.mov; sourceTree = "<group>"; };
+		D7242A2323E35CB200DADC76 /* blink.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = blink.mov; sourceTree = "<group>"; };
+		D7242A2423E35CB200DADC76 /* wander.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = wander.mov; sourceTree = "<group>"; };
+		D7242A2A23E35CC500DADC76 /* Expression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
+		D7242A2C23E35CDB00DADC76 /* VideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
+		D7242A2E23E35D6100DADC76 /* AnimojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimojiView.swift; sourceTree = "<group>"; };
+		D7242A3023E3650800DADC76 /* idle.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = idle.mov; sourceTree = "<group>"; };
 		D74BB93723E0647500EF8203 /* AnimatedGradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientImageView.swift; sourceTree = "<group>"; };
 		D74BDA4A23DF32F500D8DF53 /* AnimojiViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimojiViewManager.swift; sourceTree = "<group>"; };
 		D74BDA4C23DF3EC700D8DF53 /* AnimojiViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimojiViewContainer.swift; sourceTree = "<group>"; };
@@ -67,6 +85,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D7242A1F23E35C9D00DADC76 /* movies */ = {
+			isa = PBXGroup;
+			children = (
+				D7242A2323E35CB200DADC76 /* blink.mov */,
+				D7242A2123E35CB100DADC76 /* smile.mov */,
+				D7242A2423E35CB200DADC76 /* wander.mov */,
+				D7242A2223E35CB100DADC76 /* wanderRight.mov */,
+				D7242A2023E35CB100DADC76 /* wanderUp.mov */,
+				D7242A3023E3650800DADC76 /* idle.mov */,
+			);
+			path = movies;
+			sourceTree = "<group>";
+		};
+		D777AD6523E278F600EB9009 /* animoji */ = {
+			isa = PBXGroup;
+			children = (
+				D7242A2E23E35D6100DADC76 /* AnimojiView.swift */,
+				D74BDA4A23DF32F500D8DF53 /* AnimojiViewManager.swift */,
+				D7242A2C23E35CDB00DADC76 /* VideoManager.swift */,
+				D7242A2A23E35CC500DADC76 /* Expression.swift */,
+			);
+			path = animoji;
+			sourceTree = "<group>";
+		};
 		D7C14C0823DB22C400ECAC83 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +168,8 @@
 		D7FFA64523D7878D00A2268A /* NC1 */ = {
 			isa = PBXGroup;
 			children = (
+				D7242A1F23E35C9D00DADC76 /* movies */,
+				D777AD6523E278F600EB9009 /* animoji */,
 				D7C14C1B23DB730500ECAC83 /* navigation */,
 				D7C14C1223DB59E100ECAC83 /* milestoneCollection */,
 				D7C14C0F23DB3B6700ECAC83 /* view */,
@@ -133,7 +177,6 @@
 				D7FFA64A23D7878D00A2268A /* ViewController.swift */,
 				D7C14C0423D8D05D00ECAC83 /* StoryViewController.swift */,
 				D7FFA68223D7927A00A2268A /* Extensions.swift */,
-				D74BDA4A23DF32F500D8DF53 /* AnimojiViewManager.swift */,
 				D7FFA64623D7878D00A2268A /* AppDelegate.swift */,
 				D7FFA64823D7878D00A2268A /* SceneDelegate.swift */,
 				D7FFA64C23D7878D00A2268A /* Main.storyboard */,
@@ -204,6 +247,12 @@
 			files = (
 				D7FFA65323D7879100A2268A /* LaunchScreen.storyboard in Resources */,
 				D7FFA65023D7879100A2268A /* Assets.xcassets in Resources */,
+				D7242A2623E35CB200DADC76 /* smile.mov in Resources */,
+				D7242A2923E35CB200DADC76 /* wander.mov in Resources */,
+				D7242A2523E35CB200DADC76 /* wanderUp.mov in Resources */,
+				D7242A2723E35CB200DADC76 /* wanderRight.mov in Resources */,
+				D7242A3123E3650800DADC76 /* idle.mov in Resources */,
+				D7242A2823E35CB200DADC76 /* blink.mov in Resources */,
 				D7FFA64E23D7878D00A2268A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,7 +278,10 @@
 				D7C14C1D23DB732700ECAC83 /* NavigationController.swift in Sources */,
 				D7FFA64723D7878D00A2268A /* AppDelegate.swift in Sources */,
 				D7C14C2923DC85D100ECAC83 /* MilestoneTransition.swift in Sources */,
+				D7242A2B23E35CC500DADC76 /* Expression.swift in Sources */,
 				D7C14C1623DB5DC400ECAC83 /* MilestoneCollectionViewCell.swift in Sources */,
+				D7242A2D23E35CDB00DADC76 /* VideoManager.swift in Sources */,
+				D7242A2F23E35D6100DADC76 /* AnimojiView.swift in Sources */,
 				D7C14C0E23DB25DF00ECAC83 /* Manager.swift in Sources */,
 				D7FFA64923D7878D00A2268A /* SceneDelegate.swift in Sources */,
 				D7C14C2323DB7A0A00ECAC83 /* AnimojiViewFrame.swift in Sources */,
