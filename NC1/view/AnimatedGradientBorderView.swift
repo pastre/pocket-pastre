@@ -17,11 +17,18 @@ class AnimatedGradientBorderView: UIView {
     @IBInspectable var isCircular: Bool = false
     @IBInspectable var lineWidth: CGFloat = 10
     
+    var currentBorder: CAGradientLayer?
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
 //        if hasSetup { return }
 //        self.hasSetup = true
+        
+        if let border = self.currentBorder {
+
+            border.removeFromSuperlayer()
+        }
         self.clipsToBounds = true
         
         let cornerRadius = self.isCircular ? rect.width / 2 : 20
@@ -39,6 +46,7 @@ class AnimatedGradientBorderView: UIView {
         self.layer.insertSublayer(border, at: 0)
                 
         let shape = CAShapeLayer()
+        
         
         shape.lineWidth = self.lineWidth
     
@@ -60,6 +68,7 @@ class AnimatedGradientBorderView: UIView {
         border.mask = shape
         border.add(animation, forKey: nil)
         
+        self.currentBorder = border
         print("Completed drawing for gradient")
     }
 }

@@ -30,8 +30,8 @@ class ViewController: UIViewController, AnimojiViewContainer {
         super.viewDidLayoutSubviews()
         
         self.setupViewPan()
-//        AnimojiViewManager.instance.configure(on: self)
 //        self.destinationTransitionDidEnd()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,11 +41,14 @@ class ViewController: UIViewController, AnimojiViewContainer {
         
         self.setupButtons()
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.configureButtons()
+        
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,11 +60,7 @@ class ViewController: UIViewController, AnimojiViewContainer {
     
     func setupButtons() {
         for (i, button) in self.getButtons().enumerated() {
-//            if let story = Manager.instance.getStory(at: i), let icon = story.getIcon() {
-//                
-//            }
-//           
-            
+
             button.transform = button.transform.scaledBy(x: 0.001, y: 0.001)
         }
     }
@@ -82,6 +81,10 @@ class ViewController: UIViewController, AnimojiViewContainer {
         UIView.animate(withDuration: 0.5) {
             self.getButtons().forEach {
                 $0.transform = .identity
+
+                $0.layoutIfNeeded()
+                $0.setNeedsDisplay()
+                
             }
         }
     }
