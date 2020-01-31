@@ -50,6 +50,9 @@ class AnimojiViewManager {
         self.view.frame = frame
         view.getParentView().bringSubviewToFront(self.view)
         
+        view.getParentView().setNeedsDisplay()
+        view.getParentView().setNeedsLayout()
+        view.getParentView().setNeedsUpdateConstraints()
         self.delegate = view
         
         print("Configured animoji view on", view)

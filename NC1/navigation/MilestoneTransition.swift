@@ -35,6 +35,9 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
         let destinationAnimojiFrame = self.destination.getDestinationFrame()
         
         let animojiView = AnimojiViewManager.instance.getAnimojiView()
+
+        animojiView.setNeedsDisplay()
+        animojiView.setNeedsLayout()
         
         animojiView.frame = sourceAnimojiFrame
         
@@ -68,8 +71,10 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
 //            containerView.addSubview(destinationView)
 //
             animojiView.removeFromSuperview()
-            
+
             AnimojiViewManager.instance.configure(on: self.destination)
+            
+            animojiView.layoutIfNeeded()
             
             self.destination.animatePresentation(with: 5)
             
@@ -78,6 +83,9 @@ class MilestoneTransition: NSObject, UIViewControllerAnimatedTransitioning {
         
         self.source.sourceTransitionWillStart()
         self.destination.destinationTransitionWillStart()
+
+        animojiView.setNeedsDisplay()
+        animojiView.setNeedsLayout()
         
         animator.startAnimation()
     }

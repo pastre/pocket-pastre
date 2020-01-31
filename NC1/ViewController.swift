@@ -46,6 +46,8 @@ class ViewController: UIViewController, AnimojiViewContainer {
         
         AnimojiViewManager.instance.startAnimation()
         
+        AnimojiViewManager.instance.configure(on: self)
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {

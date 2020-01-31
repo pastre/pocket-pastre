@@ -55,8 +55,21 @@ class AnimojiView: UIView {
         super.draw(rect)
         
         self.debugImage.frame = self.frame
+        
+        if let layer = currentLayer {
+            layer.bounds = self.debugImage.bounds
+            layer.frame = self.debugImage.bounds
+        }
+        
     }
     
+    override func layoutSubviews() {
+        
+        if let layer = currentLayer {
+            layer.bounds = self.debugImage.bounds
+            layer.frame = self.debugImage.bounds
+        }
+    }
     
     func play(_ player: AVPlayer) {
       
@@ -69,6 +82,8 @@ class AnimojiView: UIView {
         
         let layer = AVPlayerLayer(player: player)
 
+        layer.needsDisplayOnBoundsChange = true
+        
         layer.bounds = self.debugImage.bounds
         layer.frame = self.debugImage.frame
         
