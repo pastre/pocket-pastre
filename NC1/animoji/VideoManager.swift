@@ -52,7 +52,7 @@ class VideoManager  {
     }
     
     @objc func fileComplete(_ notification: NSNotification) {
-        print("Notification", notification)
+        
         self.currentPlayer?.pause()
         self.currentPlayer = nil
         self.isPlaying = false
@@ -81,9 +81,6 @@ class VideoManager  {
         
         
         AnimojiViewManager.instance.getAnimojiView().play(self.currentPlayer!)
-        
-        
-        print("Playing", animoji)
         
         self.isIdle = !self.isIdle
         

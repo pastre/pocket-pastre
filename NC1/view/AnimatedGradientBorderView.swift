@@ -66,6 +66,6 @@ class AnimatedGradientBorderView: UIView {
         border.add(animation, forKey: nil)
         
         self.currentBorder = border
-        print("Completed drawing for gradient")
+        
     }
 }
