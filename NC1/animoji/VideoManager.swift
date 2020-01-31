@@ -76,8 +76,10 @@ class VideoManager  {
         
         guard let url = Bundle.main.url(forResource: animoji.rawValue, withExtension:"mov") else { return }
         let player = AVPlayer(url: url)
-        
+        player.isMuted = true
         self.currentPlayer = player
+        
+        
         AnimojiViewManager.instance.getAnimojiView().play(self.currentPlayer!)
         
         

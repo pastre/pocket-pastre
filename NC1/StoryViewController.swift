@@ -27,6 +27,10 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         self.storiesCollectionView.dataSource = self
         self.storiesCollectionView.delegate = self
+        
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(self.onPinch(_:)))
+        
+        self.view.addGestureRecognizer(pinchGesture)
     }
     
     
@@ -84,6 +88,26 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
             self.descriptionTextView.text = milestone.description
         }
     }
+    
+    
+    var currentPinchScale: CGFloat?
+    
+    func onPinchEnded() {
+        guard let scale = self.currentPinchScale else { return }
+        
+        defer { self.currentPinchScale = nil }
+        
+        if scale < 1 {
+            self.dismiss()
+        }
+        
+    }
+    
+    func dismiss() {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 
     
     // MARK: - CollectionView methods
@@ -157,6 +181,21 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
 //        return -90
 //    }
     
+    
+    
+    // MARK: - Callbacks
+    
+    @objc func onPinch(_ gesture: UIPinchGestureRecognizer) {
+        print("Pinching bro", gesture.state.rawValue, gesture.scale)
+        
+        switch gesture.state {
+        case .ended:
+            self.onPinchEnded()
+        default:
+            self.currentPinchScale = gesture.scale
+        }
+    }
+    
     // MARK: - AnimojiViewContainer
     
     func sourceTransitionAnimation() -> (() -> ())? {
@@ -220,7 +259,7 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     
     @objc func onTap() {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss()
     }
     
     
