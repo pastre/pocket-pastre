@@ -24,15 +24,11 @@ class ViewController: UIViewController, AnimojiViewContainer {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.onTap))
+        
+        self.view.addGestureRecognizer(tap)
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        self.setupViewPan()
-//        self.destinationTransitionDidEnd()
-        
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -60,19 +56,16 @@ class ViewController: UIViewController, AnimojiViewContainer {
     // MARK: - Setup functions
     
     func setupButtons() {
-        for (i, button) in self.getButtons().enumerated() {
-
-            button.transform = button.transform.scaledBy(x: 0.001, y: 0.001)
-        }
-    }
-    
-    func setupViewPan() {
         
-        for button in self.getButtons() {
+        
+        for ( button) in self.getButtons() {
+            
             let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.onPan))
             
             button.isUserInteractionEnabled = true
             button.addGestureRecognizer(panGesture)
+            
+            button.transform = button.transform.scaledBy(x: 0.001, y: 0.001)
         }
     }
     
@@ -187,8 +180,63 @@ class ViewController: UIViewController, AnimojiViewContainer {
         
     }
     
+    @objc func onTap(_ gesture: UITapGestureRecognizer?) {
+        guard let gesture = gesture else {
+            self.animateButtons()
+            return
+        }
+        let location = gesture.location(in: self.view)
+        
+        for button in self.getButtons() {
+            if button.frame.contains(location) {
+                self.animateButton(button)
+                return
+            }
+        }
+        
+        self.animateButtons()
+    }
+    
     
     // MARK: - Helpers
+    
+    func animateButton(_ button: UIView) {
+        let buttonCenter = button.center
+        let absCenter = self.view.center
+        
+        let dx = buttonCenter.x - absCenter.x
+        let dy = buttonCenter.y - absCenter.y
+        
+        self.getButtons().forEach { self.view.bringSubviewToFront($0) }
+        
+        UIView.animate(withDuration: 0.15, animations: {
+            button.transform = button.transform.translatedBy(x: -dx, y: -dy)
+        }) { (_) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.transform = button.transform.scaledBy(x: 2, y: 2)
+            }) { (_) in
+                UIView.animate(withDuration: 0.15, delay: 0.3, options: [], animations: {
+                    button.transform = .identity
+                }, completion: nil)
+            }
+        }
+    }
+    
+    func animateButtons() {
+        
+        UIView.animate(withDuration: 0.3, animations:  {
+            self.getButtons().forEach { (button) in
+                button.alpha = 0
+                button.transform = button.transform.scaledBy(x: 2, y: 2)
+            }
+        } ) { (_) in
+            self.getButtons().forEach { (button) in
+                
+                button.alpha = 1
+                button.transform = .identity
+            }
+        }
+    }
     
     func getButtons() -> [UIView] {
         return [
@@ -228,7 +276,7 @@ class ViewController: UIViewController, AnimojiViewContainer {
     // MARK: - AnimojiViewContainer
     
     func onAnimojiViewTapped() {
-        //
+        self.onTap(nil)
     }
     
     func getParentView() -> UIView {
@@ -265,20 +313,6 @@ class ViewController: UIViewController, AnimojiViewContainer {
     func sourceTransitionAnimation() -> (() -> ())? {
         
         return {
-//            if let selectedView = self.currentSelectedView {
-//                selectedView.transform = selectedView.transform.scaledBy(x: 5, y: 5)
-//            }
-//
-//            for (i, button) in self.getButtons().enumerated() {
-//                if i < self.getButtons().count / 2 {
-//                    button.transform = button.transform.translatedBy(x: 500, y: 0)
-//                    print("a")
-//                } else {
-//                    button.transform = button.transform.scaledBy(x: 0.001, y: 0.001)
-//                    print("b")
-//                }
-//            }
-            
             
             self.getButtons().forEach {
                 let scale: CGFloat = $0 == self.currentSelectedView ? 5 : 0.001

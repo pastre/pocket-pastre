@@ -435,7 +435,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pastre.github.io.NC1;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.pastre.pocketpastre;
 				PRODUCT_NAME = "Pocket Pastre";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -453,7 +453,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pastre.github.io.NC1;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.pastre.pocketpastre;
 				PRODUCT_NAME = "Pocket Pastre";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
