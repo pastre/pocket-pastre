@@ -20,7 +20,7 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     var story: Story!
     
-    var currentSelectedItem: IndexPath?
+    var currentSelectedItem: IndexPath? = IndexPath(item: 0, section: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +55,8 @@ class StoryViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.presentContentView()
 
         self.storiesCollectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
+        
+        self.updateData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -217,9 +217,8 @@ class ViewController: UIViewController, AnimojiViewContainer {
             UIView.animate(withDuration: 0.3, animations: {
                 button.transform = button.transform.scaledBy(x: 2, y: 2)
             }) { (_) in
-                UIView.animate(withDuration: 0.15, delay: 0.3, options: [], animations: {
-                    button.transform = .identity
-                }, completion: nil)
+                
+                self.onStorySelected(button)
             }
         }
     }
